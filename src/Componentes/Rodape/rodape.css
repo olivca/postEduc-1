@@ -1,20 +1,20 @@
 ul li a{
-    color: rgba(255,255,255,.5)!important;
+    color: rgba(255,255,255,.5);
     text-decoration: none;
 }
 
 ul li a:hover{
-    color: rgba(255,255,255,.5)!important;
+    color: rgba(255,255,255,.5);
     text-decoration: none;
 }
 
 div a {
-    color: rgba(255,255,255,.5)!important;
+    color: rgba(255,255,255,.5);
     text-decoration: none;
 }
 
 div a:hover {
-    color: rgba(255,255,255,.5)!important;
+    color: rgba(255,255,255,.5);
     text-decoration: none;
 }
 
