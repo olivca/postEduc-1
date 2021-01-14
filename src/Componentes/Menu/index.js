@@ -1,8 +1,10 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 import {Navbar, Nav} from 'react-bootstrap';
 
 import Logo from '../../Img/logo.png';
+
 
 import './menu.css';
 
@@ -11,15 +13,15 @@ export class Menu extends React.Component{
         return(
             <Navbar className="menu" expand="lg" variant="dark">
                 <Navbar.Brand href="#">
-                    <img src={Logo} width="30" height="30" className="d-inline-block align-top" 
-                    alt="PostEduc logo" />
+                    <Link to="/"><img src={Logo} width="30" height="30" className="d-inline-block align-top" 
+                    alt="PostEduc logo" /></Link>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
                         <Nav.Item>
                             {/*as={Link} href="" to=""*/}
-                            <Nav.Link >+ Criar Evento</Nav.Link> 
+                            <Nav.Link as={Link} to="/CadastroEvento">+ Criar Evento</Nav.Link> 
                         </Nav.Item>
                         <Nav.Item>
                             <Nav.Link>+ Criar Grupo de Estudos</Nav.Link> 
