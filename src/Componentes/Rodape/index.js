@@ -4,6 +4,8 @@ import Facebook from '../../Img/icone_face.svg';
 import Instagram from '../../Img/icone_insta.svg';
 import Whatsapp from '../../Img/icone_whats.svg';
 
+import {Link} from 'react-router-dom'
+
 
 import './rodape.css';
 
@@ -14,14 +16,14 @@ export class Rodape extends React.Component{
                 <div className="container-fluid">
                     <div className="row pt-3">
                         <div className="m-auto col-4" style={{fontSize: 30}}>
-                            <a href="#!">
+                            <Link to="/">
                                 PostEduc
-                            </a>
+                            </Link>
                         </div>
                         <div className="col-4">
                             <h4>Menu</h4>
                             <ul className="list-unstyled">
-                                <li><a href="#!">Criar Evento</a></li>
+                                <li><Link to="/CadastroEvento">Criar Evento</Link></li>
                                 <li><a href="#!">Criar Grupo de Estudos</a></li>
                                 <li><a href="#!">Categoria</a></li>
                                 <li><a href="#!">Eventos</a></li>
