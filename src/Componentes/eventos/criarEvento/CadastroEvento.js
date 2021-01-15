@@ -40,7 +40,7 @@ export default class CadastroEvento extends React.Component{
         <Container>
           
           <p >Esse curso será ministrado de qual forma: </p>
-          <div className="form-row mb-4">
+          <div className="form-row mb-4 ml-1">
             <label className="form-check-label mr-3 " htmlFor="modalidade"><input type="radio" className="mr-2 " name="modalidade"  value="presencial" onMouseDown={this.muda}/>Presencial</label>
 
             <label className="form-check-label mr-3 " htmlFor="modalidade"><input type="radio" className="mr-2 " name="modalidade"  value="online" onMouseDown={this.muda} />Online</label>

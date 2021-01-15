@@ -6,7 +6,12 @@ export default class SemiPresencial extends React.Component{
   constructor(props){
     super(props)
 
+    this.state = {
+      cep:'',
+    }
+
     this.enviarEvento = this.enviarEvento.bind(this)
+    this.buscaCep = this.buscaCep.bind(this)
   }
 
   async enviarEvento(event){
@@ -21,6 +26,17 @@ export default class SemiPresencial extends React.Component{
     await resposta
   }
 
+  async buscaCep(event){
+    event.preventDefault()
+    let ceps = event.target.value
+
+    if(ceps.length === 8){
+      await fetch(`https://viacep.com.br/ws/${ceps}/json/`)
+      .then(resposta => resposta.json())
+      .then(resposta => this.setState({'cep':resposta}))
+    }
+  }
+
   render(){
     let now = new Date()
     let ano = now.getFullYear() 
@@ -29,6 +45,8 @@ export default class SemiPresencial extends React.Component{
     let hora    = now.getHours()
     let minuto  = now.getMinutes()
     let segundo = now.getSeconds()
+    
+    console.log(this.state.cep.cep)
 
     return(
       <Container >
@@ -127,7 +145,7 @@ export default class SemiPresencial extends React.Component{
             <Col sm={12} md={12} lg={4}>
               <Form.Group>
                 <Form.Label >CEP: </Form.Label>
-                  <Form.Control type="text" name="cep" />
+                  <Form.Control type="text" name="cep" onChange={this.buscaCep}/>
               </Form.Group>
             </Col>
           </Form.Row>
@@ -135,15 +153,15 @@ export default class SemiPresencial extends React.Component{
           <Form.Row>
             <Col >
               <Form.Group>
-                <Form.Label >Estado: </Form.Label>
-                  <Form.Control type="text" name="estado" />
+                <Form.Label >Estado(UF): </Form.Label>
+                  <Form.Control type="text" name="estado" defaultValue={this.state.cep.uf}/>
               </Form.Group>
             </Col>
 
             <Col>
               <Form.Group>
                 <Form.Label >Endereço: </Form.Label>
-                  <Form.Control  type="text" name="logradouro"/>
+                  <Form.Control  type="text" name="logradouro" defaultValue={this.state.cep.logradouro}/>
               </Form.Group>
             </Col>
           </Form.Row>
@@ -152,7 +170,7 @@ export default class SemiPresencial extends React.Component{
             <Col>
               <Form.Group>
                 <Form.Label >Cidade: </Form.Label>
-                  <Form.Control type="text" name="cidade"/>
+                  <Form.Control type="text" name="cidade" defaultValue={this.state.cep.localidade}/>
               </Form.Group>
             </Col>
 
@@ -168,14 +186,14 @@ export default class SemiPresencial extends React.Component{
             <Col>
               <Form.Group>
                 <Form.Label >Bairro: </Form.Label>
-                  <Form.Control type="text" name="bairro"/>
+                  <Form.Control type="text" name="bairro" defaultValue={this.state.cep.bairro}/>
               </Form.Group>
             </Col>
 
             <Col>
               <Form.Group>
                 <Form.Label  >Comple: </Form.Label>
-                  <Form.Control  type="text" name="comple"/>
+                  <Form.Control  type="text" name="comple" />
               </Form.Group>
             </Col>
           </Form.Row>
