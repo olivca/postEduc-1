@@ -37,7 +37,7 @@ export class Menu extends React.Component{
                             <Nav.Link>|</Nav.Link> 
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link>Cadastrar-se</Nav.Link> 
+                            <Nav.Link as={Link} to="/CadastroUsuario">Cadastrar-se</Nav.Link> 
                         </Nav.Item>
                     </Nav>
                 </Navbar.Collapse>
