@@ -30,7 +30,7 @@ export class Menu extends React.Component{
                     <Nav className="ml-auto">
                         <Nav.Item>
                             {/*as={Link} href="" to=""*/}
-                            <Nav.Link >Entrar</Nav.Link> 
+                            <Nav.Link as={Link} to="/Login">Entrar</Nav.Link> 
                         </Nav.Item>
                         <Nav.Item>
                             {/*as={Link} href="" to=""*/}

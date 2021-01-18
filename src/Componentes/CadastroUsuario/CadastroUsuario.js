@@ -163,7 +163,7 @@ export default function CadastroUsuario(props) {
 
                 <Form.Group>
                     <Form.Label>Repita a senha cadastrada</Form.Label>
-                    <Form.Control type="password" id="senha" name="senha" placeholder="Repetir senha fornecida" />
+                    <Form.Control type="password" id="confirmesenha" name="confirmesenha" placeholder="Repetir senha fornecida" />
                 </Form.Group>
                 
                 
