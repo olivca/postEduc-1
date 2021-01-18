@@ -1,5 +1,4 @@
 import React from 'react';
-import {useState} from 'react';
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -7,29 +6,11 @@ import Button from 'react-bootstrap/Button'
   
 export default function CadastroUsuario(props) {
 
-    const [ form, setForm ] = useState({
-        nome: "",
-        sobrenome: "",
-        nascimento: "",
-        genero: "",
-        email: "",
-        telefone: "",
-        bairro: "",
-        cidade: "",
-        uf: "",
-        escola: "",
-        ano_letivo: "",
-        tipo_escola: "",
-        nome_usuario: "",
-        senha: ""
-
-    });
-
 
     const Envio = async (evento) => {
         evento.preventDefault();
         // eslint-disable-next-line no-unused-vars
-        const resultado = fetch("http://localhost/postEducTeste/testes/src/php/cadastrousuario.php", { method: "POST", body: new FormData(evento.target) });
+        const resultado = fetch("http://52.67.245.155/php/cadastrousuario.php", { method: "POST", body: new FormData(evento.target) });
         alert("Cadastro realizado com sucesso!")
     };   
     
@@ -62,7 +43,7 @@ export default function CadastroUsuario(props) {
 
                 <Form.Group>
                     <Form.Label>Data de Nascimento </Form.Label>
-                    <Form.Control type="text" id="nascimento" name="nascimento" placeholder="DD/MM/AAAA" />
+                    <Form.Control type="date" id="nascimento" name="nascimento" />
                 </Form.Group>
 
                 <Form.Group>  
