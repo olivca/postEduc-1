@@ -17,7 +17,7 @@ export default class VerificaEvento extends React.Component{
   }
 
   componentDidMount(){
-    fetch('http://localhost/testes/verifica.php')
+    fetch('http://52.67.245.155/php/verifica.php')
     .then(resposta => resposta.json())
     .then(resposta => this.setState({'eventos':resposta}))
   }

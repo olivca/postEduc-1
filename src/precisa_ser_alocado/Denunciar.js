@@ -9,7 +9,7 @@ export default class Denunciar extends React.Component{
 
   async enviarDenuncia(event){
     event.preventDefault()
-    const url = "http://localhost/testes/enviadenuncia.php"
+    const url = "http://52.67.245.155/php/enviadenuncia.php"
     const dados = new FormData(event.target)
     const cabecalho = {
       method:"POST",

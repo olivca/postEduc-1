@@ -11,7 +11,7 @@ export default class Minievento extends React.Component{
         <Card.Img variant="top" src={foto} width="250" height="160" />
         <Card.Body className="flex bet ">
           <Card.Title>Titulo do Evento</Card.Title>
-          <Card.Link href="http://localhost:3000/" className="ini">+ Info</Card.Link>
+          <Card.Link href="#" className="ini">+ Info</Card.Link>
         </Card.Body>
       </Card>
     )

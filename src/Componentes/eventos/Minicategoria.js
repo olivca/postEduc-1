@@ -13,7 +13,7 @@ export default class Minicategoria extends React.Component{
         <Card.Img variant="top" src={foto} width="250" height="160" />
         <Card.Body className="flex bet ">
           <Card.Title>Categoria</Card.Title>
-          <Card.Link href="http://localhost:3000/" className="ini">+ Info</Card.Link>
+          <Card.Link href="#" className="ini">+ Info</Card.Link>
         </Card.Body>
       </Card>
     )

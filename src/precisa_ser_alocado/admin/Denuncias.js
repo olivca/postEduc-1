@@ -14,7 +14,7 @@ export default class Denuncias extends React.Component{
   }
 
   componentDidMount(){
-    fetch("http://localhost/testes/infodenuncia.php")
+    fetch("http://52.67.245.155/php/infodenuncia.php")
     .then( resposta => resposta.json() )
     .then( resposta => this.setState({ 'denuncias': resposta }) )
   }
