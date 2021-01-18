@@ -1,10 +1,11 @@
 import React from 'react';
 import {useState} from 'react';
+import {Form,Col,Button} from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
 
-  
+
+
 export default function CadastroUsuario(props) {
 
     const [ form, setForm ] = useState({
@@ -32,23 +33,27 @@ export default function CadastroUsuario(props) {
         })        
     };  
 
+    const history = useHistory();
+
     const Envio = async (evento) => {
         evento.preventDefault();
         // eslint-disable-next-line no-unused-vars
         const resultado = fetch("http://localhost/postEducNovo/postEduc/php/cadastrousuario.php", { method: "POST", body: new FormData(evento.target) });
-        alert("Cadastro realizado com sucesso!")
-    };   
-
+        alert("Cadastro realizado com sucesso!");
+        history.push("/");       
+    };     
 
     
     return(
-    <div>       
-        
-            <h2>Seja Bem-vindo, Faça Aqui seu Cadastro</h2>
+    <div className="col-sm">       
             
+            <br />
+            <p><h2>Seja Bem-vindo, Faça Aqui seu Cadastro</h2></p>
+            <br />
 
             <Form onSubmit={Envio}>                
-
+                <Col sm={12} md={6} lg={4}>
+                
                 <Form.Group>
                     <Form.Label>Nome</Form.Label>
                     <Form.Control onChange={alteracao} type="text" id="nome" name="nome" placeholder="Insira seu nome" />
@@ -70,8 +75,8 @@ export default function CadastroUsuario(props) {
 
                 <Form.Group>
                     <Form.Label>Data de Nascimento </Form.Label>
-                    <Form.Control onChange={alteracao} type="text" id="nascimento" name="nascimento" placeholder="DD/MM/AAAA" />
-                </Form.Group>
+                    <Form.Control onChange={alteracao} type="date" id="nascimento" name="nascimento" placeholder="DD/MM/AAAA" />
+                </Form.Group><br />
 
                 <Form.Group>  
                     <Form.Label>Email </Form.Label>
@@ -124,7 +129,7 @@ export default function CadastroUsuario(props) {
                     <option value="SE">Sergipe</option>
                     <option value="TO">Tocantins</option>
                     </Form.Control>                    
-                </Form.Group>    
+                </Form.Group><br />    
 
                 <Form.Group>
                     <Form.Label>Estuda em qual escola?</Form.Label>
@@ -144,7 +149,7 @@ export default function CadastroUsuario(props) {
                     <option value="Federal">Federal</option>
                     <option value="Privada">Privada</option>
                     </Form.Control>
-                </Form.Group>
+                </Form.Group><br />
 
                 <Form.Group>
                     <Form.Label>Escolha um nome de usuário</Form.Label>
@@ -160,11 +165,14 @@ export default function CadastroUsuario(props) {
                     <Form.Label>Repita a senha cadastrada</Form.Label>
                     <Form.Control type="password" id="senha" name="senha" placeholder="Repetir senha fornecida" />
                 </Form.Group>
-
-                <Button variant="primary" type="submit">Cadastrar</Button>          
                 
+                
+                <Button variant="primary" type="submit">Cadastrar</Button>
+                                         
+                </Col>
 
             </Form>
+            <br />
         
         
 
