@@ -46,7 +46,7 @@ export default class Online extends React.Component{
       return(
         <Container >
           <Form onSubmit={this.enviarEvento}>
-            <Form.Control type="hidden" name="criador_evento" defaultValue="2" />
+            <Form.Control type="hidden" name="criador_evento" defaultValue="1" />
             <Form.Control type="hidden" name="data_postagem" defaultValue={`${ano}-${mes}-${dia}`}/>
             <Form.Control type="hidden" name="hora_postagem" defaultValue={`${hora}:${minuto}:${segundo}`}/>
             <Form.Control type="hidden" name="modalidade" defaultValue={this.props.modalidade}/>

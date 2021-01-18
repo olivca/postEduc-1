@@ -12,7 +12,7 @@ export class Menu extends React.Component{
     render(){
         return(
             <Navbar className="menu" expand="lg" variant="dark">
-                <Navbar.Brand href="#">
+                <Navbar.Brand >
                     <Link to="/"><img src={Logo} width="30" height="30" className="d-inline-block align-top" 
                     alt="PostEduc logo" /></Link>
                 </Navbar.Brand>

@@ -38,7 +38,7 @@ export default function CadastroUsuario(props) {
     const Envio = async (evento) => {
         evento.preventDefault();
         // eslint-disable-next-line no-unused-vars
-        const resultado = fetch("http://localhost/postEducNovo/postEduc/php/cadastrousuario.php", { method: "POST", body: new FormData(evento.target) });
+        const resultado = fetch("http://52.67.245.155/php/cadastrousuario.php", { method: "POST", body: new FormData(evento.target) });
         alert("Cadastro realizado com sucesso!");
         history.push("/");       
     };     
@@ -48,7 +48,7 @@ export default function CadastroUsuario(props) {
     <div className="col-sm">       
             
             <br />
-            <p><h2>Seja Bem-vindo, Faça Aqui seu Cadastro</h2></p>
+            <h2>Seja Bem-vindo, Faça Aqui seu Cadastro</h2>
             <br />
 
             <Form onSubmit={Envio}>                

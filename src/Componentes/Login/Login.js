@@ -1,5 +1,5 @@
 import React from 'react';
-import {useState} from 'react';
+//import {useState} from 'react';
 import {Form,Button,Col}  from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 
@@ -8,13 +8,13 @@ import { useHistory } from 'react-router-dom';
 
 export default function Login(props) {
 
-    const [ form, setForm ] = useState({
+    // const [ form, setForm ] = useState({
         
-        // nome_usuario: "",
-        // senha: ""
-        dados:[]
+    //     nome_usuario: "",
+    //     senha: ""
+    //     dados:[]
 
-    });
+    // });
 
 
     // const recebedados = async () =>{
@@ -38,7 +38,7 @@ export default function Login(props) {
     const Envio = async (evento) => {
         evento.preventDefault()
     // eslint-disable-next-line no-unused-vars
-        const url = "http://localhost/postEduc2Lab/postEduc/php/login.php"
+        const url = "http://52.67.245.155/php/login.php"
         const dados = new FormData(evento.target)
         const cabecalho = {
             method: "POST", 
@@ -48,7 +48,7 @@ export default function Login(props) {
         const resp = await fetch(url,cabecalho)
         const dadosbd = await resp.json()
         await dadosbd;
-        setForm(dadosbd)
+        //setForm(dadosbd)
         
        
         const senhaform = evento.target.senha.value;
@@ -57,7 +57,7 @@ export default function Login(props) {
        
 
         if (senhaform === 'admin') {        
-        history.push("/");  
+        history.push("/CadastroEvento");  
         } else if (senhaform === senha) {
             history.push("/");    
         } else {

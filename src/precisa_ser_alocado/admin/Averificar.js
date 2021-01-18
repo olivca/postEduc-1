@@ -11,7 +11,7 @@ export default class Averificar extends React.Component{
   
   async darCertificacao(event){
     event.preventDefault()
-    const url = "http://localhost/testes/verificado.php"
+    const url = "http://52.67.245.155/php/verificado.php"
     const dados = new FormData(event.target)
     const cabecalho = {
       method:"POST",
@@ -19,10 +19,6 @@ export default class Averificar extends React.Component{
     }
     const resposta = await fetch(url,cabecalho)
     await resposta
-  }
-
-  olhar(){
-    console.log('Olhei')
   }
 
   render(){
@@ -34,7 +30,7 @@ export default class Averificar extends React.Component{
             <Form.Control type="hidden" name="id" defaultValue={this.props.id}/>
             <Button variant="success" type="submit">Dar Certificação</Button>
           </Form>
-          <Form onSubmit={this.olhar}>
+          <Form >
             <Form.Control type="hidden" name="id" defaultValue={this.props.id}/>
             <Button variant="warning" type="submit">Olhar evento</Button>
           </Form>
