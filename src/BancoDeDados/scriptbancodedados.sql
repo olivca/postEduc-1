@@ -1,22 +1,32 @@
 create database if not exists posteduc;
 use posteduc;
 
-create table if not exists usuario(
-	id_usuario 	 			int          not null auto_increment,
-	nome              varchar(50)  not null,
-  sobrenome         varchar(150) not null,
-	nome_usuario      varchar(30)  not null,
-	nascimento        date         not null,
-	email             varchar(45)  not null,
-	senha             varchar(45)  not null,
-	cidade            varchar(100) default null,
-  bairro            varchar(100) default null,
-  uf                varchar(2)   default null,
-  escola            varchar(100) default null,
-  tipo_escola       varchar(50)  default null,
-  
-	primary key      (id_usuario)
-);
+-- Table structure for table `usuario`
+--
+
+DROP TABLE IF EXISTS `usuario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `usuario` (
+  `id_usuario` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) DEFAULT NULL,
+  `sobrenome` varchar(150) DEFAULT NULL,
+  `nome_usuario` varchar(30) DEFAULT NULL,
+  `senha` varchar(45) DEFAULT NULL,
+  `nascimento` varchar(10) DEFAULT NULL,
+  `genero` varchar(15) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `telefone` varchar(45) DEFAULT NULL,
+  `cidade` varchar(100) DEFAULT NULL,
+  `bairro` varchar(100) DEFAULT NULL,
+  `uf` varchar(2) DEFAULT NULL,
+  `escola` varchar(100) DEFAULT NULL,
+  `ano_letivo` varchar(45) DEFAULT NULL,
+  `tipo_escola` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id_usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
 
 create table if not exists evento (
 	id_evento 	     int           not null auto_increment,
