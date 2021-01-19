@@ -30,9 +30,9 @@ export class Rodape extends React.Component{
                             </ul>
                         </div>
                         <div className="col-4">
-                            <h4>Sobre</h4>
+                            <h4>O PostEduc</h4>
                             <ul className="list-unstyled list-inline">
-                                <li><a href="#!">Sobre</a></li>
+                                <li><Link to="/Sobre">Sobre</Link></li>
                                 <li><a href="#!">Parcerias</a></li>
                                 <li><a href="#!">Termos e Condições</a></li>
                                 <li><a href="#!">Política de Privacidade</a></li>
