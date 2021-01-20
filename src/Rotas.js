@@ -8,6 +8,9 @@ import CadastroUsuario from './Componentes/CadastroUsuario/CadastroUsuario'
 import Login from './Componentes/Login/Login'
 import Sobre from './Paginas/Sobre'
 import PoliticaPrivacidade from './Paginas/PoliticaPrivacidade'
+import VerificaEvento from './Componentes/admin/VerificaEvento'
+import Denuncias from './Componentes/admin/Denuncias'
+
 
 export class Rotas extends React.Component{
     render(){
@@ -22,6 +25,8 @@ export class Rotas extends React.Component{
                 <Route exact path="/Login" component={Login}/>
                 <Route exact path="/Sobre" component={Sobre}/>
                 <Route exact path="/PoliticaPrivacidade" component={PoliticaPrivacidade}/>
+                <Route exact path="/Denuncias" component={Denuncias}/>
+                <Route exact path="/VerificaEvento" component={VerificaEvento}/>
             
             </Switch>
         )    

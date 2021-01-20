@@ -3,7 +3,9 @@ import React from 'react'
 import {Form,Container,Col} from 'react-bootstrap'
 import { Redirect } from 'react-router-dom'
 
-export default class SemiPresencial extends React.Component{
+import { connect } from 'react-redux';
+
+class SemiPresencial extends React.Component{
   constructor(props){
     super(props)
 
@@ -48,6 +50,9 @@ export default class SemiPresencial extends React.Component{
     if(this.state.redirect){
       return <Redirect to="/"/>
     }else {
+      const { novoId } = this.props
+
+
       let now = new Date()
       let ano = now.getFullYear() 
       let mes = now.getMonth()+1
@@ -61,7 +66,7 @@ export default class SemiPresencial extends React.Component{
       return(
         <Container >
           <Form onSubmit={this.enviarEvento}>
-            <Form.Control type="hidden" name="criador_evento" defaultValue="1" />
+            <Form.Control type="hidden" name="criador_evento" defaultValue={novoId} />
             <Form.Control type="hidden" name="data_postagem" defaultValue={`${ano}-${mes}-${dia}`}/>
             <Form.Control type="hidden" name="hora_postagem" defaultValue={`${hora}:${minuto}:${segundo}`}/>
             <Form.Control type="hidden" name="modalidade" defaultValue={this.props.modalidade}/>
@@ -226,3 +231,9 @@ export default class SemiPresencial extends React.Component{
     }
   }
 }
+const mapState = store =>({
+  novoId: store.IdLogin.novoId
+})
+
+
+export default connect(mapState)(SemiPresencial)
