@@ -8,10 +8,8 @@ p{
 }
 
 .margin{
-  margin: 5px 60px 5px 60px;
+  margin: 5px 30px 5px 30px;
 }
-
-
 
 .flex{
   display: flex;
@@ -56,18 +54,20 @@ p{
 }
 
 .center{
-
   text-align: center;
 }
 
 .informacoes{
-  padding: 30px 50px 30px 50px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  background-color: rgba(80, 68, 86, .9);
+  color: #fff; 
+  border-radius: 15px;
+  padding: 30px 30px 30px 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .info{
-  padding: 30px 0px 30px 0px;
+  padding: 15px 0px 15px 0px;
 }
 
 .ini{
@@ -84,4 +84,50 @@ p{
   padding-top: 20px;
 }
 
+h1.sobre{
+  color:rgba(224,235,243,0.8);
+  text-align: center;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+}
+
+p.sobre{
+  font-size: 30px;
+  color:rgba(224,235,243);
+  text-align: center;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+  opacity: 0.8;
+}
+
+.bgImagem{
+  opacity: 0.7;
+  background-size: cover;
+  position: relative;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.bgImagem:hover{
+  opacity: 1.0;
+}
+
+.sobreObjetivo{
+  text-align: center;
+
+}
+
+p.sobreObjetivo{
+  text-align: justify;
+
+}
+
+p.sobreObjetivo{
+  font-size: 25px;
+  margin: 22px auto;
+  max-width: 700px;
+}
 
