@@ -7,7 +7,7 @@ import Logo from '../../Img/logo.png';
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux' 
-import { NomeLogin } from '../../store/actions';
+import { NomeLogin,IdLogin } from '../../store/actions';
 
 
 import './menu.css';
@@ -71,7 +71,7 @@ export class Menu extends React.Component{
                         </Nav>
                         <Nav className="ml-auto">
                         <Nav.Item>
-                            <Nav.Link onClick={() =>  NomeLogin('') }>Sair</Nav.Link>
+                            <Nav.Link onClick={() =>  NomeLogin(''),() =>{} }>Sair</Nav.Link>
                         </Nav.Item>
                             
                             <Nav.Item>
@@ -90,8 +90,9 @@ export class Menu extends React.Component{
 }
 
 const mapear = store => ({ 
-    novoNome: store.NomeLogin.novoNome
+    novoNome: store.NomeLogin.novoNome,
+    novoId: store.IdLogin.novoId
 })
 
-const propss = dispatch => bindActionCreators({NomeLogin},dispatch)
+const propss = dispatch => bindActionCreators({NomeLogin,IdLogin},dispatch)
 export default connect(mapear,propss)(Menu);

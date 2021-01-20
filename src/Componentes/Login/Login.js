@@ -4,7 +4,7 @@ import { Redirect } from 'react-router';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { NomeLogin } from '../../store/actions';
+import { NomeLogin, IdLogin } from '../../store/actions';
 
 
 class Login extends React.Component{
@@ -38,10 +38,11 @@ class Login extends React.Component{
             'nome':dadosbd[0].nome,
          })
 
-         const {NomeLogin} = this.props
+         
+        const { NomeLogin,IdLogin } = this.props
         
-         NomeLogin(this.state.nome)
-        
+        NomeLogin(this.state.nome)
+        IdLogin(this.state.id)
     };
 
     render(){
@@ -49,11 +50,11 @@ class Login extends React.Component{
             return <Redirect to="/" />
         }else{
             //const { novoId } = this.props;
-            const { novoNome } = this.props;
+            const { novoNome,novoId } = this.props;
             
             return(
                 <div className="form-group">   
-                        <br /><h2>Login:{novoNome}</h2><br />
+                        <br /><h2>Login:{novoNome} / {novoId}</h2><br />
                     
 
                     <Form onSubmit={this.Envio}>
@@ -81,8 +82,9 @@ class Login extends React.Component{
 };
 
 const mapStateToProps = store => ({
-    novoNome: store.NomeLogin.novoNome
+    novoNome: store.NomeLogin.novoNome,
+    novoId: store.IdLogin.novoId
 })
 
-const mapDispatchToProps = dispatch => bindActionCreators({NomeLogin}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({NomeLogin,IdLogin}, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
