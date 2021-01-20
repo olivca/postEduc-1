@@ -35,7 +35,7 @@ export class Rodape extends React.Component{
                                 <li><Link to="/Sobre">Sobre</Link></li>
                                 <li><a href="#!">Parcerias</a></li>
                                 <li><a href="#!">Termos e Condições</a></li>
-                                <li><a href="#!">Política de Privacidade</a></li>
+                                <li><Link to="/PoliticaPrivacidade">Política de Privacidade</Link></li>
                                 <li><a href="#!">Ética e Conduta</a></li>
                                 <li><a href="#!">Ajuda</a></li>
                             </ul>

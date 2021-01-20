@@ -39,8 +39,18 @@ export default function CadastroUsuario(props) {
         evento.preventDefault();
         // eslint-disable-next-line no-unused-vars
         const resultado = fetch("http://52.67.245.155/php/cadastrousuario.php", { method: "POST", body: new FormData(evento.target) });
-        alert("Cadastro realizado com sucesso!");
-        history.push("/");       
+        
+        const senhaform = evento.target.senha.value;
+        const confirmesenha = evento.target.confirmesenha.value;
+        
+        
+        if (senhaform !== confirmesenha) {
+            alert("Senha não coincide, por favor tentar novamente. ")
+        } else { 
+           alert("Cadastro realizado com sucesso!");
+           history.push("/")
+        }            
+        
     };     
 
     
@@ -165,6 +175,14 @@ export default function CadastroUsuario(props) {
 
                             <Form.Group as={Col}>
                                 <Form.Label>Repita a senha cadastrada</Form.Label>
+                                <Form.Control onChange={alteracao} type="password" id="confirmesenha" name="confirmesenha" placeholder="Repetir senha fornecida" />
+                            </Form.Group>
+                        </Form.Row>
+                        
+                        <Form.Group>
+                        <Form.Check type="checkbox" onChange={alteracao} id="polpriv" name="polpriv" label="Li e concordo com a Política de Privacidade do PostEduc / Squad8." />
+                        </Form.Group>
+
                                 <Form.Control type="password" id="confirmesenha" name="confirmesenha" placeholder="Repetir senha fornecida" />
                             </Form.Group>
                         </Form.Row>
