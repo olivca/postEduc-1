@@ -78,6 +78,14 @@ create table if not exists comentarios(
   foreign key (id_usuario_fk) references usuario (id_usuario),
   foreign key (id_evento_fk)  references evento (id_evento)
 );
+
+create table if not exists interesse (
+	id_interesse int not null auto_increment,
+    nome varchar(100) not null,
+    email varchar(50) not null,
+    interesse text not null,
+    primary key (id_interesse)
+);
  
 create view organizador as
 	select nome_evento, id_evento, nome, id_usuario from evento inner join usuario where evento.criador_evento = usuario.id_usuario ;

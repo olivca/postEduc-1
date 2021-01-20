@@ -99,7 +99,7 @@ export default function CadastroUsuario(props) {
                         <Form.Row>
                             <Form.Group as={Col}>                    
                                 <Form.Label>Bairro</Form.Label>
-                                <Form.Control onChange={alteracao}type="text" id="bairro" name="bairro" placeholder="Insira o nome do seu bairro" /> 
+                                <Form.Control onChange={alteracao}type="text" id="bairro" name="bairro" placeholder="Insira o seu bairro" /> 
                             </Form.Group>    
 
                             <Form.Group as={Col}>    
@@ -180,12 +180,8 @@ export default function CadastroUsuario(props) {
                         </Form.Row>
                         
                         <Form.Group>
-                        <Form.Check type="checkbox" onChange={alteracao} id="polpriv" name="polpriv" label="Li e concordo com a Política de Privacidade do PostEduc / Squad8." />
+                            <Form.Check type="checkbox" onChange={alteracao} id="polpriv" name="polpriv" label="Li e concordo com a Política de Privacidade do PostEduc / Squad8." />
                         </Form.Group>
-
-                                <Form.Control type="password" id="confirmesenha" name="confirmesenha" placeholder="Repetir senha fornecida" />
-                            </Form.Group>
-                        </Form.Row>
                         <Button variant="primary" type="submit">Cadastrar</Button>                 
                     </Col>
                 </Form>
