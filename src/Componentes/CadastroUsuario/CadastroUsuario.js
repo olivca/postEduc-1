@@ -183,6 +183,9 @@ export default function CadastroUsuario(props) {
                         <Form.Check type="checkbox" onChange={alteracao} id="polpriv" name="polpriv" label="Li e concordo com a Política de Privacidade do PostEduc / Squad8." />
                         </Form.Group>
 
+                                <Form.Control type="password" id="confirmesenha" name="confirmesenha" placeholder="Repetir senha fornecida" />
+                            </Form.Group>
+                        </Form.Row>
                         <Button variant="primary" type="submit">Cadastrar</Button>                 
                     </Col>
                 </Form>

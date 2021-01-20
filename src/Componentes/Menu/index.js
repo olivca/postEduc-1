@@ -11,7 +11,7 @@ import './menu.css';
 export class Menu extends React.Component{
     render(){
         return(
-            <Navbar className="menu" expand="lg" variant="dark">
+            <Navbar  className="menu" expand="lg" variant="dark">
                 <Navbar.Brand >
                     <Link to="/"><img src={Logo} width="30" height="30" className="d-inline-block align-top" 
                     alt="PostEduc logo" /></Link>
@@ -31,10 +31,6 @@ export class Menu extends React.Component{
                         <Nav.Item>
                             {/*as={Link} href="" to=""*/}
                             <Nav.Link as={Link} to="/Login">Entrar</Nav.Link> 
-                        </Nav.Item>
-                        <Nav.Item>
-                            {/*as={Link} href="" to=""*/}
-                            <Nav.Link>|</Nav.Link> 
                         </Nav.Item>
                         <Nav.Item>
                             <Nav.Link as={Link} to="/CadastroUsuario">Cadastrar-se</Nav.Link> 
