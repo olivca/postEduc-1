@@ -49,12 +49,10 @@ class Login extends React.Component{
         if(this.state.redirect){
             return <Redirect to="/" />
         }else{
-            //const { novoId } = this.props;
-            const { novoNome,novoId } = this.props;
             
             return(
                 <div className="form-group">   
-                        <br /><h2>Login:{novoNome} / {novoId}</h2><br />
+                        <br /><h2>Login:</h2><br />
                     
 
                     <Form onSubmit={this.Envio}>
