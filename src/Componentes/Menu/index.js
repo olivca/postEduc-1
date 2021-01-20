@@ -62,7 +62,7 @@ export class Menu extends React.Component{
                     </Navbar.Collapse>
                 </Navbar>
             )
-        }else if(novoNome){
+        }else if(novoNome !== 'admin'){
             return(
                 <Navbar className="menu" expand="lg" variant="dark">
                     <Navbar.Brand >
@@ -80,6 +80,46 @@ export class Menu extends React.Component{
                                 <Nav.Link > Bem vindo { novoNome }</Nav.Link>
                             </Nav.Item>
                             
+                        </Nav>
+                        <Nav className="ml-auto">
+                        <Nav.Item>
+                            <Nav.Link onClick={this.sair}>Sair</Nav.Link>
+                        </Nav.Item>
+                            
+                            <Nav.Item>
+                                {/*as={Link} href="" to=""*/}
+                                <Nav.Link>|</Nav.Link> 
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link as={Link} to="/CadastroUsuario">Cadastrar-se</Nav.Link> 
+                            </Nav.Item>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Navbar>
+            )
+        }else if (novoNome === 'admin'){
+            return(
+                <Navbar className="menu" expand="lg" variant="dark">
+                    <Navbar.Brand >
+                        <Link to="/"><img src={Logo} width="30" height="30" className="d-inline-block align-top" 
+                        alt="PostEduc logo" /></Link>
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="mr-auto">
+                            <Nav.Item>
+                                {/*as={Link} href="" to=""*/}
+                                <Nav.Link as={Link} to="/CadastroEvento">+ Criar Evento</Nav.Link> 
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link > Bem vindo { novoNome } </Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link as={Link} to="/Denuncias">Verificar denucias</Nav.Link> 
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link as={Link} to="/VerificaEvento">Autorizar eventos</Nav.Link> 
+                            </Nav.Item>
                         </Nav>
                         <Nav className="ml-auto">
                         <Nav.Item>

@@ -1,6 +1,5 @@
 import React from 'react'
 
-import '../index.css'
 import {Link} from 'react-router-dom' 
 
 import {Form, Button, Row} from 'react-bootstrap'
