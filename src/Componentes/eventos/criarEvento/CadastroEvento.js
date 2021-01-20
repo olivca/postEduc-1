@@ -6,7 +6,11 @@ import SemiPresencial from './Semipresencial'
 
 import {Container} from 'react-bootstrap'
 
-export default class CadastroEvento extends React.Component{
+import { connect } from 'react-redux'
+
+
+
+ class CadastroEvento extends React.Component{
   constructor(props){
     super(props)
 
@@ -35,21 +39,36 @@ export default class CadastroEvento extends React.Component{
   }
 
   render(){
-    return(
-      <>
-        <Container>
-          
-          <p >Esse curso será ministrado de qual forma: </p>
-          <div className="form-row mb-4 ml-1">
-            <label className="form-check-label mr-3 " htmlFor="modalidade"><input type="radio" className="mr-2 " name="modalidade"  value="presencial" onMouseDown={this.muda}/>Presencial</label>
+    
+    const { novoNome } = this.props
 
-            <label className="form-check-label mr-3 " htmlFor="modalidade"><input type="radio" className="mr-2 " name="modalidade"  value="online" onMouseDown={this.muda} />Online</label>
-              
-            <label className="form-check-label mr-3 " htmlFor="modalidade"><input type="radio" className="mr-2" name="modalidade"  value="semipresencial" onMouseDown={this.muda} /> Semipresencial</label>
-          </div>
-        </Container>
-        {this.aparece()}
-      </>
-    )
+    if(!novoNome){
+
+      return <h1>Você precisa estar Logado para Criar um evento</h1>
+    }else{
+
+      return(
+        <>
+          <Container>
+            
+            <p >Esse curso será ministrado de qual forma: </p>
+            <div className="form-row mb-4 ml-1">
+              <label className="form-check-label mr-3 " htmlFor="modalidade"><input type="radio" className="mr-2 " name="modalidade"  value="presencial" onMouseDown={this.muda}/>Presencial</label>
+
+              <label className="form-check-label mr-3 " htmlFor="modalidade"><input type="radio" className="mr-2 " name="modalidade"  value="online" onMouseDown={this.muda} />Online</label>
+                
+              <label className="form-check-label mr-3 " htmlFor="modalidade"><input type="radio" className="mr-2" name="modalidade"  value="semipresencial" onMouseDown={this.muda} /> Semipresencial</label>
+            </div>
+          </Container>
+          {this.aparece()}
+        </>
+      )
+    }
   }
 }
+
+const mapear = store => ({
+  novoNome: store.NomeLogin.novoNome
+})
+
+export default connect(mapear)(CadastroEvento)

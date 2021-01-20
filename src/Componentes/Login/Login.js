@@ -1,43 +1,29 @@
 import React from 'react';
-//import {useState} from 'react';
 import {Form,Button,Col}  from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
+import { Redirect } from 'react-router';
+
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { NomeLogin } from '../../store/actions';
 
 
+class Login extends React.Component{
+    constructor(props){
+        super(props)
 
+        this.state = {
+            redirect: false,
+            nome:'',
+            id:'',
 
-export default function Login(props) {
+        }
 
-    // const [ form, setForm ] = useState({
-        
-    //     nome_usuario: "",
-    //     senha: ""
-    //     dados:[]
+        this.Envio = this.Envio.bind(this)
+    }
 
-    // });
-
-
-    // const recebedados = async () =>{
-    //     await fetch("http://localhost/testes/autlucas.php")
-    //     .then(resposta => resposta.json())
-    //     .then(resposta => console.log(resposta))
-
-        
-    // }
-
-
-    // const alteracao = (evento) => {
-    //     setForm({
-    //         ...form,
-    //         [evento.target.id]: evento.target.value
-    //     })        
-    // };  
-
-    const history = useHistory();
-
-    const Envio = async (evento) => {
+    async Envio(evento){
         evento.preventDefault()
-    // eslint-disable-next-line no-unused-vars
+    
         const url = "http://52.67.245.155/php/login.php"
         const dados = new FormData(evento.target)
         const cabecalho = {
@@ -47,53 +33,56 @@ export default function Login(props) {
         
         const resp = await fetch(url,cabecalho)
         const dadosbd = await resp.json()
-        await dadosbd;
-        //setForm(dadosbd)
-        
-       
-        const senhaform = evento.target.senha.value;
-       
-        const senha = dadosbd[0].senha;
-       
+        this.setState({ 
+            'id':dadosbd[0].id_usuario,
+            'nome':dadosbd[0].nome,
+         })
 
-        if (senhaform === 'admin') {        
-        history.push("/CadastroEvento");  
-        } else if (senhaform === senha) {
-            history.push("/");    
-        } else {
-            alert("Nome de usuário ou senha inválido");
-        }
-    
-    };       
-    
+         const {NomeLogin} = this.props
         
-    return(
-        <div className="form-group">
+         NomeLogin(this.state.nome)
+        
+    };
 
-                
-                <br /><h2>Login</h2><br />
+    render(){
+        if(this.state.redirect){
+            return <Redirect to="/" />
+        }else{
+            //const { novoId } = this.props;
+            const { novoNome } = this.props;
             
+            return(
+                <div className="form-group">   
+                        <br /><h2>Login:{novoNome}</h2><br />
+                    
 
-            <Form onSubmit={Envio}>
+                    <Form onSubmit={this.Envio}>
 
-                <Col sm={12} md={6} lg={4}>
-                <Form.Group>
-                    <Form.Label>Nome de usuário</Form.Label>
-                    <Form.Control  type="text" id="nome_usuario" name="nome_usuario" placeholder="Entre com o seu nome de usuário" />
-                </Form.Group>
+                        <Col sm={12} md={6} lg={4}>
+                        <Form.Group>
+                            <Form.Label>Nome de usuário</Form.Label>
+                            <Form.Control  type="text" id="nome_usuario" name="nome_usuario" placeholder="Entre com o seu nome de usuário" />
+                        </Form.Group>
 
-                <Form.Group>
-                    <Form.Label>Senha</Form.Label>
-                    <Form.Control  type="password" id="senha" name="senha" placeholder="Entre com sua senha" />
-                </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Senha</Form.Label>
+                            <Form.Control  type="password" id="senha" name="senha" placeholder="Entre com sua senha" />
+                        </Form.Group>
 
-                <Button variant="primary" type="submit">Entrar</Button>
-
-                </Col>
-            </Form>
-        </div>
-
-    )
-
+                        <Button variant="primary" type="submit" >Entrar</Button>
+                        
+                        </Col>
+                    </Form>
+                </div>
+            )
     
+        }
+    }
 };
+
+const mapStateToProps = store => ({
+    novoNome: store.NomeLogin.novoNome
+})
+
+const mapDispatchToProps = dispatch => bindActionCreators({NomeLogin}, dispatch)
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
