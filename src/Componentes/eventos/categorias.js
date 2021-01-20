@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Image from 'react-bootstrap/Image';
 import {Tab, Row, Col, Nav, Badge} from 'react-bootstrap';
 import Minievento from './Minievento';
 import './categorias.css';
 
 export default class Categorias extends Component {
+
   render() {
     return (
         <Tab.Container id="categorias" defaultActiveKey="first" className="flex">
@@ -16,7 +16,7 @@ export default class Categorias extends Component {
             <Col>
                 <Badge pill>
                     <Nav.Item>
-                    <   Nav.Link eventKey="vestibular">Vestibular</Nav.Link>
+                    <Nav.Link eventKey={this.handleClick}>Vestibular</Nav.Link>
                     </Nav.Item>
                 </Badge>
             </Col>
@@ -51,7 +51,7 @@ export default class Categorias extends Component {
         <Row className="flex">  
             <Tab.Content>
                 <h3>Pesquisa por categoria</h3>
-                <Tab.Pane eventKey="vestibular"><h5 className="pesquisaCategoria">Vestibular:</h5>
+                <Tab.Pane eventKey={this.handleClick}><h5 className="pesquisaCategoria">Vestibular:</h5>
                     <Minievento />
                 </Tab.Pane>
 
@@ -70,6 +70,6 @@ export default class Categorias extends Component {
         </Row>
 
       </Tab.Container>
-    )
+    );
   }
 }

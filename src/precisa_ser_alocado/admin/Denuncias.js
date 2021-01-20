@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom' 
+
 
 import Denuncia from './Denuncia'
 
@@ -22,7 +22,6 @@ export default class Denuncias extends React.Component{
   render(){
     return(
       <div>
-        <Link to="/"> Principal </Link>
         <div className="flex">
           
           {this.state.denuncias && this.state.denuncias.map(denuncia => (

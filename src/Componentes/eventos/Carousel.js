@@ -7,7 +7,7 @@ import foto from '../../fotos/ideia.jpg'
 export default class Caroussel extends React.Component{
   render(){
     return(
-      <Container fluid className="mb-3">
+      <Container fluid className="my-3">
           <Carousel>
             <Carousel.Item>
               <img

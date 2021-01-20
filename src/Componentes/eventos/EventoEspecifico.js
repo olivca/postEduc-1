@@ -4,6 +4,7 @@ import {Container, Row, Col, Button,Tabs,Tab} from 'react-bootstrap'
 
 import foto from '../../fotos/ideia.jpg'
 import '../../css/index.css'
+import PopoverEventoEspecifico from '../Popover/PopoverEventoEspecifico';
 
 
 export default class EventoEspecifico extends React.Component{
@@ -13,7 +14,7 @@ export default class EventoEspecifico extends React.Component{
         <Container fluid>
           <Row>
             <Col className="center column">
-              <p>verificado</p>
+              <PopoverEventoEspecifico />
               <img src={foto} alt="foto"/>
               <p>Compartilhar</p>
             </Col>
