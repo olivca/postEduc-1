@@ -12,7 +12,7 @@ import { NomeLogin, IdLogin} from '../../store/actions';
 
 import './menu.css';
 
-export class Menu extends React.Component{
+class Menu extends React.Component{
     constructor(){
         super()
 
@@ -30,7 +30,6 @@ export class Menu extends React.Component{
          const { novoNome } = this.props
 
          if(!novoNome){
-
             return(
                 <Navbar className="menu" expand="lg" variant="dark">
                     <Navbar.Brand >
@@ -111,9 +110,7 @@ export class Menu extends React.Component{
                                 {/*as={Link} href="" to=""*/}
                                 <Nav.Link as={Link} to="/CadastroEvento">+ Criar Evento</Nav.Link> 
                             </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link > Bem vindo { novoNome } </Nav.Link>
-                            </Nav.Item>
+                            
                             <Nav.Item>
                                 <Nav.Link as={Link} to="/Denuncias">Verificar denucias</Nav.Link> 
                             </Nav.Item>
@@ -121,7 +118,13 @@ export class Menu extends React.Component{
                                 <Nav.Link as={Link} to="/VerificaEvento">Autorizar eventos</Nav.Link> 
                             </Nav.Item>
                         </Nav>
+                        <Nav className="mr-auto">
+                            <Nav.Item>
+                                    <Nav.Link > Bem vindo { novoNome } </Nav.Link>
+                            </Nav.Item>
+                        </Nav>
                         <Nav className="ml-auto">
+                        
                         <Nav.Item>
                             <Nav.Link onClick={this.sair}>Sair</Nav.Link>
                         </Nav.Item>

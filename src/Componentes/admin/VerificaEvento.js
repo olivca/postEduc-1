@@ -1,9 +1,8 @@
 import React from 'react'
-
 import Averificar from './Averificar'
-
 import {Row, Col} from 'react-bootstrap'
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 
  class VerificaEvento extends React.Component{
   constructor(props){
@@ -27,27 +26,27 @@ import { connect } from 'react-redux';
     const { novoNome } = this.props
     if( novoNome !== 'admin'){
       return(
-      <h1>Voce nao tem acesso a isso</h1>
-
+        <>
+          <h1>Você não tem acesso a isso!</h1>
+          <Link to="/">Inicio</Link>
+        </>
       )
     }else{
       return(
-        
-          <Row>
-            
-              {this.state.eventos && this.state.eventos.map(item => (
-                <Col>
-                  <Averificar
-                    key={item.id_evento}
-                    id={item.id_evento}
-                    nome_evento = {item.nome_evento}
-                    data_postagem = {item.data_postagem}
-                  /> 
-                </Col>
-              ))}
-            
-          </Row>
-        
+        <Row>
+          
+            {this.state.eventos && this.state.eventos.map(item => (
+              <Col>
+                <Averificar
+                  key={item.id_evento}
+                  id={item.id_evento}
+                  nome_evento = {item.nome_evento}
+                  data_postagem = {item.data_postagem}
+                /> 
+              </Col>
+            ))}
+          
+        </Row>
       )
     }
   }
