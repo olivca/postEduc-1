@@ -1,4 +1,6 @@
 import React from 'react'
+import '../css/index.css'
+import {Col} from "react-bootstrap"
 
 
 
@@ -9,8 +11,9 @@ class PoliticaPrivacidade extends React.Component {
     render(){
         return(
             
-            <div>
+            <div className="container-fluid">
                 
+                <br />
                 <h1>Política de Privacidade</h1>
 
                 <p>No <i>Squad8</i>, privacidade e segurança são prioridades e nos comprometemos com a transparência do tratamento de dados pessoais dos nossos usuários/clientes. Por isso, esta presente Política de Privacidade estabelece como é feita a coleta, uso e transferência de informações de clientes ou outras pessoas que acessam ou usam nosso site.<br />
@@ -22,7 +25,8 @@ class PoliticaPrivacidade extends React.Component {
                 <p>Nosso site coleta e utiliza alguns dados pessoais seus, de forma a viabilizar a prestação de serviços e aprimorar a experiência de uso.</p><br />
 
                 <h3>1.1. Dados pessoais fornecidos pelo titular</h3><br />
-                <ul>
+                <div>
+                <ul className="margin">
                     <li><i>Nome completo</i></li>
                     <li><i>Gênero</i></li>
                     <li><i>Data de nascimento</i></li>
@@ -33,10 +37,10 @@ class PoliticaPrivacidade extends React.Component {
                     <li><i>Nome de usuário</i></li>
                     <li><i>Senha de acesso</i></li>
                 </ul><br />
-
+                </div>
 
                 <h3>1.2. Dados pessoais coletados automaticamente</h3><br />
-                <ul>
+                <ul className="margin">
                     <li><i>Nenhum</i></li>
                 </ul><br />
 
@@ -44,7 +48,7 @@ class PoliticaPrivacidade extends React.Component {
 
                 <h2>2. Como coletamos os seus dados?</h2>
                 <p>Nesse sentido, a coleta dos seus dados pessoais ocorre da seguinte forma:</p>
-                <ul>
+                <ul className="margin">
                     <li><i>Formulário de cadastro de usuário</i></li>
                     <li><i>Formulário de cadastro de evento</i></li>
                     <li><i>Formulário de interesses e sugestões</i></li>
@@ -65,12 +69,12 @@ class PoliticaPrivacidade extends React.Component {
                 <h2>3. Quais são os seus direitos?</h2><br />
 
                 <p>O <i>Squad 8</i> assegura a seus usuários/clientes seus direitos de titular previstos no artigo 18 da Lei Geral de Proteção de Dados. Dessa forma, você pode, de maneira gratuita e a qualquer tempo:</p>
-                <ul>
+                <ul className="margin">
                     <li><b>Confirmar a existência de tratamento de dados</b>, de maneira simplificada ou em formato claro e completo.</li>
                     <li><b>Acessar seus dados</b>, podendo solicitá-los em uma cópia legível sob forma impressa ou por meio eletrônico, seguro e idôneo.</li>
-                    <li><b>Corrigir seus dados</b>,ao solicitar a edição, correção ou atualização destes.</li>
-                    <li><b>Limitar seus dados</b>quando desnecessários, excessivos ou tratados em desconformidade com a legislação através da anonimização, bloqueio ou eliminação.</li>
-                    <li><b>Solicitar a portabilidade de seus dados</b>,através de um relatório de dados cadastrais que o <i>Squad 8</i> trata a seu respeito.</li>
+                    <li><b>Corrigir seus dados</b>, ao solicitar a edição, correção ou atualização destes.</li>
+                    <li><b>Limitar seus dados</b> quando desnecessários, excessivos ou tratados em desconformidade com a legislação através da anonimização, bloqueio ou eliminação.</li>
+                    <li><b>Solicitar a portabilidade de seus dados</b>, através de um relatório de dados cadastrais que o <i>Squad 8</i> trata a seu respeito.</li>
                     <li><b>Eliminar seus dados</b> tratados a partir de seu consentimento, exceto nos casos previstos em lei.</li>
                     <li><b>Revogar seu consentimento</b>, desautorizando o tratamento de seus dados.</li>
                     <li><b>Informar-se sobre a possibilidade de não fornecer seu consentimento</b> e sobre as consequências da negativa.</li>
@@ -81,10 +85,9 @@ class PoliticaPrivacidade extends React.Component {
                 <h2>4. Como você pode exercer seus direitos de titular?</h2><br />
 
                 <p>Para exercer seus direitos de titular, você deve entrar em contato com o <i>Squad 8</i> através dos seguintes meios disponíveis:</p>
-                <ul>
-                    <li><i>E-mail: squad8recode@gmail.com</i></li>	
-                </ul>
-
+                
+                <i>E-mail: squad8recode@gmail.com</i><p />
+                
                 <p>De forma a garantir a sua correta identificação como titular dos dados pessoais objeto da solicitação, é possível que solicitemos documentos ou demais comprovações que possam comprovar sua identidade. Nessa hipótese, você será informado previamente.</p><br />
 
 
@@ -93,12 +96,13 @@ class PoliticaPrivacidade extends React.Component {
 
                 <p>Seus dados pessoais coletados pelo <i>Squad 8</i> serão utilizados e armazenados durante o tempo necessário para a prestação do serviço ou para que as finalidades elencadas na presente Política de Privacidade sejam atingidas, considerando os direitos dos titulares dos dados e dos controladores.<br />
                 De modo geral, seus dados serão mantidos enquanto a relação contratual entre você e o <i>Squad 8</i> perdurar. Findado o período de armazenamento dos dados pessoais, estes serão excluídos de nossas bases de dados ou anonimizados, ressalvadas as hipóteses legalmente previstas no artigo 16 lei geral de proteção de dados, a saber:</p>
-                <ol>
+                
+                <ol className="margin lista">
                     <li>I – cumprimento de obrigação legal ou regulatória pelo controlador;</li>
                     <li>II – estudo por órgão de pesquisa, garantida, sempre que possível, a anonimização dos dados pessoais;</li>
                     <li>III – transferência a terceiro, desde que respeitados os requisitos de tratamento de dados dispostos nesta Lei; ou</li>
                     <li>IV – uso exclusivo do controlador, vedado seu acesso por terceiro, e desde que anonimizados os dados.</li>
-                </ol>
+                </ol><br />
 
                 <p>Isto é, informações pessoais sobre você que sejam imprescindíveis para o cumprimento de determinações legais, judiciais e administrativas e/ou para o exercício do direito de defesa em processos judiciais e administrativos serão mantidas, a despeito da exclusão dos demais dados. <br />
                 O armazenamento de dados coletados pelo <i>Squad 8</i> reflete o nosso compromisso com a segurança e privacidade dos seus dados. Empregamos medidas e soluções técnicas de proteção aptas a garantir a confidencialidade, integridade e inviolabilidade dos seus dados. Além disso, também contamos com medidas de segurança apropriadas aos riscos e com controle de acesso às informações armazenadas.</p><br />
@@ -110,11 +114,11 @@ class PoliticaPrivacidade extends React.Component {
                 <p>Para mantermos suas informações pessoais seguras, usamos ferramentas físicas, eletrônicas e gerenciais orientadas para a proteção da sua privacidade.<br />
                 Aplicamos essas ferramentas levando em consideração a natureza dos dados pessoais coletados, o contexto e a finalidade do tratamento e os riscos que eventuais violações gerariam para os direitos e liberdades do titular dos dados coletados e tratados.<br />
                 Entre as medidas que adotamos, destacamos as seguintes:</p>
-                <ul>
+                <ul className="margin">
                     <li>Apenas pessoas autorizadas têm acesso a seus dados pessoais.</li>
                     <li>O acesso a seus dados pessoais é feito somente após o compromisso de confidencialidade.</li>
                     <li>Seus dados pessoais são armazenados em ambiente seguro e idôneo.</li>
-                </ul>
+                </ul><br />
 
                 <p>O <i>Squad 8</i> se compromete a adotar as melhores posturas para evitar incidentes de segurança. Contudo, é necessário destacar que nenhuma página virtual é inteiramente segura e livre de riscos. É possível que, apesar de todos os nossos protocolos de segurança, problemas de culpa exclusivamente de terceiros ocorram, como ataques cibernéticos de <i>hackers</i>, ou também em decorrência da negligência ou imprudência do próprio usuário/cliente.<br />
                 Em caso de incidentes de segurança que possa gerar risco ou dano relevante para você ou qualquer um de nossos usuários/clientes, comunicaremos aos afetados e a Autoridade Nacional de Proteção de Dados sobre o ocorrido, em consonância com as disposições da Lei Geral de Proteção de Dados.</p><br />
@@ -129,7 +133,7 @@ class PoliticaPrivacidade extends React.Component {
                 Todavia, nossos parceiros têm suas próprias Políticas de Privacidade, que podem divergir desta. Recomendamos a leitura desses documentos.</p>
 
                 <p>Além disso, também existem outras hipóteses em que seus dados poderão ser compartilhados, que são:</p>
-                <ol>
+                <ol className="margin lista">
                     <li>I – Determinação legal, requerimento, requisição ou ordem judicial, com autoridades judiciais, administrativas ou governamentais competentes.</li>
                     <li>II – Caso de movimentações societárias, como fusão, aquisição e incorporação, de forma automática.</li>
                     <li>III – Proteção dos direitos do <i>Squad 8</i> em qualquer tipo de conflito, inclusive os de teor judicial.</li>
@@ -170,10 +174,10 @@ class PoliticaPrivacidade extends React.Component {
                 Caso a Autoridade Nacional de Proteção de Dados exija a adoção de providências em relação ao tratamento de dados realizado pelo <i>Squad 8</i>, comprometemo-nos a segui-las.</p><br />
 
 
-                <h3>10.1 Isenção de responsabilidade</h3><br />
+                <h3>10.1. Isenção de responsabilidade</h3><br />
 
                 <p>Conforme mencionado no Tópico 6, embora adotemos elevados padrões de segurança a fim de evitar incidentes, não há nenhuma página virtual inteiramente livre de riscos. Nesse sentido, o <i>Squad 8</i> não se responsabiliza por:</p>
-                <ol>
+                <ol className="margin lista">
                     <li>I – Quaisquer consequências decorrentes da negligência, imprudência ou imperícia dos usuários em relação a seus dados individuais. Garantimos e nos responsabilizamos apenas pela segurança dos processos de tratamento de dados e do cumprimento das finalidades descritas no presente instrumento.
                         Destacamos que a responsabilidade em relação à confidencialidade dos dados de acesso é do usuário.</li>
                     <li>II – Ações maliciosas de terceiros, como ataques de hackers, exceto se comprovada conduta culposa ou deliberada do <i>Squad 8</i>.
@@ -189,10 +193,10 @@ class PoliticaPrivacidade extends React.Component {
                 Caso tenha dúvidas sobre esta Política de Privacidade ou sobre os dados pessoais que tratamos, você pode entrar em contato com o nosso Encarregado de Proteção de Dados Pessoais, através dos seguintes canais:</p>
                 <i>Squad8<br />
                 squad8recode@gmail.com</i><br /><br />
+                
+            </ div>
 
-
-
-            </div>
+            
         )
     }
 }

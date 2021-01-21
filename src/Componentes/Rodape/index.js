@@ -24,7 +24,7 @@ export class Rodape extends React.Component{
                             <h4>Menu</h4>
                             <ul className="list-unstyled">
                                 <li><Link to="/CadastroEvento">Criar Evento</Link></li>
-                                <li><a href="#!">Criar Grupo de Estudos</a></li>
+                                {/* <li><a href="#!">Criar Grupo de Estudos</a></li> */}
                                 <li><a href="/categorias">Categorias</a></li>
                                 <li><a href="#!">Eventos</a></li>
                             </ul>
@@ -33,9 +33,9 @@ export class Rodape extends React.Component{
                             <h4>O PostEduc</h4>
                             <ul className="list-unstyled list-inline">
                                 <li><Link to="/Sobre">Sobre</Link></li>
-                                <li><a href="#!">Parcerias</a></li>
+                                {/* <li><a href="#!">Parcerias</a></li> */}
                                 <li><Link to="/PoliticaPrivacidade">Política de Privacidade</Link></li>
-                                <li><a href="#!">Ajuda</a></li>
+                                {/* <li><a href="#!">Ajuda</a></li> */}
                             </ul>
                         </div>                
                     </div>

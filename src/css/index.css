@@ -7,6 +7,10 @@ p{
   font-weight: bold;
 }
 
+.lista{
+  list-style: none;
+}
+
 .margin{
   margin: 5px 30px 5px 30px;
 }

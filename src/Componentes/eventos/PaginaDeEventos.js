@@ -75,8 +75,8 @@ componentDidMount(){
 
         <div className="borda margin center informacoes">
 
-          <h2 className="borda margin  info"> + Crie um Grupo de estudos</h2>
-          <h3 className="cor">Area em fase de desenvolvimento</h3>
+          {/* <h2 className="borda margin  info"> + Crie um Grupo de estudos</h2>
+          <h3 className="cor">Area em fase de desenvolvimento</h3> */}
 
         </div>
 
