@@ -5,7 +5,6 @@ import { useHistory } from 'react-router-dom';
 
 
 
-
 export default function CadastroUsuario(props) {
 
     const [ form, setForm ] = useState({
@@ -178,7 +177,7 @@ export default function CadastroUsuario(props) {
                                 <Form.Control onChange={alteracao} type="password" id="confirmesenha" name="confirmesenha" placeholder="Repetir senha fornecida" />
                             </Form.Group>
                         </Form.Row>
-                        
+                                                
                         <Form.Group>
                             <Form.Check type="checkbox" onChange={alteracao} id="polpriv" name="polpriv" label="Li e concordo com a Política de Privacidade do PostEduc / Squad8." />
                         </Form.Group>
