@@ -19,7 +19,7 @@ export class Rotas extends React.Component{
                 <Route exact path="/" component={PaginaDeEvento} />
     
                 {/* Crie as Rotas Aqui */}
-                <Route exact path="/EventoEspecifico" component={EventoEspecifico}/>
+                <Route exact path="/EventoEspecifico:id" component={EventoEspecifico}/>
                 <Route exact path="/CadastroEvento" component={CadastroEvento}/>
                 <Route exact path="/CadastroUsuario" component={CadastroUsuario}/>
                 <Route exact path="/Login" component={Login}/>
