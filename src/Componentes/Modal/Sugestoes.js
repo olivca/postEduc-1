@@ -32,9 +32,11 @@ class Sugestoes extends React.Component {
 		  body:dados,
 		}
 		console.log(cabecalho)
+		
 		const resposta = await fetch(url,cabecalho)
 		await resposta
-	
+		alert("enviado com sucesso");
+		
 	}
 
 	render() {
@@ -48,30 +50,35 @@ class Sugestoes extends React.Component {
 					<Modal.Header closeButton>
 						<Modal.Title>Formulário de Interesses / Sugestões</Modal.Title>
 					</Modal.Header>
-					<Modal.Body>
 					<Form onSubmit={this.enviarSugestao}>
-						<Form.Group controlId="formBasicEmail">
-						<Form.Label>Nome completo</Form.Label>
-						<Form.Control type="text" placeholder="Digite seu nome completo" />
-						</Form.Group>
-						<Form.Group controlId="formBasicEmail">
-						<Form.Label>Email</Form.Label>
-						<Form.Control type="email" placeholder="Seu melhor e-mail aqui" />
-						</Form.Group>
-						<Form.Group controlId="exampleForm.ControlTextarea1">
-						<Form.Label>Interesses / Sugestões</Form.Label>
-						<Form.Control as="textarea" rows={3} placeholder="Escreva aqui seus interesses ou sugestões" />
-						</Form.Group>
-					</Form>
-					</Modal.Body>
+						<Modal.Body>
+					
+							<Form.Group >
+							<Form.Label>Nome completo</Form.Label>
+							<Form.Control type="text" id="nome" name="nome" placeholder="Digite seu nome completo" />
+							</Form.Group>
+							<Form.Group >
+							<Form.Label>Email</Form.Label>
+							<Form.Control type="email" id="email" name="email" placeholder="Seu melhor e-mail aqui" />
+							</Form.Group>
+							<Form.Group >
+							<Form.Label>Interesses / Sugestões</Form.Label>
+							<Form.Control as="textarea" id="sugestao" name="sugestao" rows={3} placeholder="Escreva aqui seus interesses ou sugestões" />
+							</Form.Group>
+						
+						</Modal.Body>
 						<Modal.Footer>
 							<Button variant="secondary" onClick={this.handleClose}>
 								Fechar
 							</Button>
-							<Button variant="primary" onClick={this.handleClose}>
+							<Button variant="primary" type="submit" onClick={this.handleClose}>
 								Enviar
 							</Button>
-						</Modal.Footer>
+							
+						</Modal.Footer>	
+					</Form>
+					
+						
 				</Modal>
 			</>
 		);
