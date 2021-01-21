@@ -5,6 +5,7 @@ import '../../css/index.css'
 import Minievento from './Minievento'
 import Minicategoria from './Minicategoria'
 import Caroussel from './Carousel'
+import Sugestoes from '../Modal/Sugestoes'
 
 export default class PaginaDeEvento extends React.Component{
 
@@ -95,10 +96,10 @@ componentDidMount(){
         </div>
 
 
-        <div className="borda margin center informacoes">
+        <div className="margin center informacoes">
 
-          <h2 className="borda margin  info">Não encontrou um Curso ou Evento de seu interesse? Nos ajude a melhorar o postEduc</h2>
-          <h3 className="cor">Preencha o formulario de interesse / sugestões</h3>
+          <h2 className="margin  info">Não encontrou um Curso ou Evento de seu interesse? Nos ajude a melhorar o postEduc</h2>
+          <Sugestoes />
 
         </div>
 

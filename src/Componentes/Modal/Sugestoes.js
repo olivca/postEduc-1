@@ -35,7 +35,7 @@ class Sugestoes extends React.Component {
 		
 		const resposta = await fetch(url,cabecalho)
 		await resposta
-		alert("enviado com sucesso");
+		alert("Sua sugestão foi enviada com sucesso!");
 		
 	}
 
@@ -52,20 +52,18 @@ class Sugestoes extends React.Component {
 					</Modal.Header>
 					<Form onSubmit={this.enviarSugestao}>
 						<Modal.Body>
-					
 							<Form.Group >
-							<Form.Label>Nome completo</Form.Label>
-							<Form.Control type="text" id="nome" name="nome" placeholder="Digite seu nome completo" />
+								<Form.Label>Nome completo</Form.Label>
+								<Form.Control type="text" id="nome" name="nome" placeholder="Digite seu nome completo" />
 							</Form.Group>
 							<Form.Group >
-							<Form.Label>Email</Form.Label>
-							<Form.Control type="email" id="email" name="email" placeholder="Seu melhor e-mail aqui" />
+								<Form.Label>Email</Form.Label>
+								<Form.Control type="email" id="email" name="email" placeholder="Seu melhor e-mail aqui" />
 							</Form.Group>
 							<Form.Group >
-							<Form.Label>Interesses / Sugestões</Form.Label>
-							<Form.Control as="textarea" id="sugestao" name="sugestao" rows={3} placeholder="Escreva aqui seus interesses ou sugestões" />
+								<Form.Label>Interesses / Sugestões</Form.Label>
+								<Form.Control as="textarea" id="sugestao" name="sugestao" rows={3} placeholder="Escreva aqui seus interesses ou sugestões" />
 							</Form.Group>
-						
 						</Modal.Body>
 						<Modal.Footer>
 							<Button variant="secondary" onClick={this.handleClose}>
@@ -74,11 +72,8 @@ class Sugestoes extends React.Component {
 							<Button variant="primary" type="submit" onClick={this.handleClose}>
 								Enviar
 							</Button>
-							
 						</Modal.Footer>	
 					</Form>
-					
-						
 				</Modal>
 			</>
 		);
