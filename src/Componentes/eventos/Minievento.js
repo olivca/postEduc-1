@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 import {Card} from 'react-bootstrap'
 
@@ -10,8 +11,8 @@ export default class Minievento extends React.Component{
       <Card className="card h">
         <Card.Img variant="top" src={foto} width="250" height="160" />
         <Card.Body className="flex bet ">
-          <Card.Title>Titulo do Evento</Card.Title>
-          <Card.Link href="#" className="ini">+ Info</Card.Link>
+          <Card.Title>{this.props.nome}</Card.Title>
+          <Card.Link as={Link} to={{pathname:`/EventoEspecifico${this.props.id}`}} className="ini">+ Info</Card.Link>
         </Card.Body>
       </Card>
     )
