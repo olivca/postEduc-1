@@ -71,7 +71,6 @@ class Login extends React.Component{
         if(this.state.redirect){
             return <Redirect to="/" />
         }else{
-            
             return(
                 <Jumbotron className="m-0">
                     <div >
@@ -82,13 +81,11 @@ class Login extends React.Component{
                             <Form.Group>
                                 <Form.Label>Nome de usuário</Form.Label>
                                 <Form.Control onChange={this.alteracao_user} type="text" id="nome_usuario" name="nome_usuario" placeholder="Entre com o seu nome de usuário" />
-                                <Form.Control  type="text" id="nome_usuario" name="nome_usuario" placeholder="Entre com o seu nome de usuário" />
                             </Form.Group>
 
                             <Form.Group>
                                 <Form.Label>Senha</Form.Label>
                                 <Form.Control onChange={this.alteracao_senha} type="password" id="senha" name="senha" placeholder="Entre com sua senha" />
-                                <Form.Control  type="password" id="senha" name="senha" placeholder="Entre com sua senha" />
                             </Form.Group>
 
                             <Button variant="primary" type="submit">Entrar</Button>

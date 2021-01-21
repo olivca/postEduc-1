@@ -10,7 +10,7 @@ import Sobre from './Paginas/Sobre'
 import PoliticaPrivacidade from './Paginas/PoliticaPrivacidade'
 import VerificaEvento from './Componentes/admin/VerificaEvento'
 import Denuncias from './Componentes/admin/Denuncias'
-
+import TodosEventos from './Componentes/eventos/Todos'
 
 export class Rotas extends React.Component{
     render(){
@@ -19,7 +19,7 @@ export class Rotas extends React.Component{
                 <Route exact path="/" component={PaginaDeEvento} />
     
                 {/* Crie as Rotas Aqui */}
-                <Route exact path="/EventoEspecifico" component={EventoEspecifico}/>
+                <Route exact path="/EventoEspecifico:id" component={EventoEspecifico}/>
                 <Route exact path="/CadastroEvento" component={CadastroEvento}/>
                 <Route exact path="/CadastroUsuario" component={CadastroUsuario}/>
                 <Route exact path="/Login" component={Login}/>
@@ -27,6 +27,7 @@ export class Rotas extends React.Component{
                 <Route exact path="/PoliticaPrivacidade" component={PoliticaPrivacidade}/>
                 <Route exact path="/Denuncias" component={Denuncias}/>
                 <Route exact path="/VerificaEvento" component={VerificaEvento}/>
+                <Route exact path="/TodosEventos" component={TodosEventos}/>
             
             </Switch>
         )    
