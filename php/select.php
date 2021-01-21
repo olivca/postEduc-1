@@ -2,8 +2,9 @@
 
   require_once('./conexao.php');
 
+  $evento = $_get['id_evento']
 
-  $select = "select * from evento where id_evento = 1";
+  $select = "select * from evento where id_evento = $evento";
 
   $resultado = mysqli_query($conexao,$select);
 
