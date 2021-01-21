@@ -2,6 +2,7 @@ import React from 'react';
 import {useState} from 'react';
 import {Form,Col,Button, Jumbotron} from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
+import PoliticaPrivacidade from '../Modal/PoliticaPrivacidade'
 
 
 
@@ -177,10 +178,17 @@ export default function CadastroUsuario(props) {
                                 <Form.Control onChange={alteracao} type="password" id="confirmesenha" name="confirmesenha" placeholder="Repetir senha fornecida" />
                             </Form.Group>
                         </Form.Row>
-                                                
-                        <Form.Group>
-                            <Form.Check type="checkbox" onChange={alteracao} id="polpriv" name="polpriv" label="Li e concordo com a Política de Privacidade do PostEduc / Squad8." />
-                        </Form.Group>
+
+                        <Form.Row>
+                            <Form.Group as={Col} xs="auto">
+                                <Form.Check type="checkbox" onChange={alteracao} id="polpriv" name="polpriv" label="Li e concordo com a Política de Privacidade do PostEduc." />
+                            </Form.Group>
+                            <Form.Group as={Col} xs="auto">
+                                <Button variant="secondary" size="sm">
+                                    <PoliticaPrivacidade/>
+                                </Button>
+                            </Form.Group>
+                        </Form.Row>
                         <Button variant="primary" type="submit">Cadastrar</Button>                 
                     </Col>
                 </Form>
