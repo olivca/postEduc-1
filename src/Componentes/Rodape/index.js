@@ -8,6 +8,7 @@ import {Link} from 'react-router-dom'
 
 
 import './rodape.css';
+import PoliticaPrivacidade from '../Modal/PoliticaPrivacidade';
 
 export class Rodape extends React.Component{
     render(){
@@ -34,7 +35,7 @@ export class Rodape extends React.Component{
                             <ul className="list-unstyled list-inline">
                                 <li><Link to="/Sobre">Sobre</Link></li>
                                 {/* <li><a href="#!">Parcerias</a></li> */}
-                                <li><Link to="/PoliticaPrivacidade">Política de Privacidade</Link></li>
+                                <PoliticaPrivacidade />
                                 {/* <li><a href="#!">Ajuda</a></li> */}
                             </ul>
                         </div>                
