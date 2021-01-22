@@ -71,7 +71,6 @@ class Login extends React.Component{
         if(this.state.redirect){
             return <Redirect to="/" />
         }else{
-            
             return(
                 <Jumbotron className="m-0">
                     <div >

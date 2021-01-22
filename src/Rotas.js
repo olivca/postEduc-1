@@ -9,7 +9,7 @@ import Login from './Componentes/Login/Login'
 import Sobre from './Paginas/Sobre'
 import VerificaEvento from './Componentes/admin/VerificaEvento'
 import Denuncias from './Componentes/admin/Denuncias'
-
+import TodosEventos from './Componentes/eventos/Todos'
 
 export class Rotas extends React.Component{
     render(){
@@ -25,6 +25,7 @@ export class Rotas extends React.Component{
                 <Route exact path="/Sobre" component={Sobre}/>
                 <Route exact path="/Denuncias" component={Denuncias}/>
                 <Route exact path="/VerificaEvento" component={VerificaEvento}/>
+                <Route exact path="/TodosEventos" component={TodosEventos}/>
             
             </Switch>
         )    

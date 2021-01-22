@@ -2,7 +2,6 @@ import React from 'react';
 
 import {Container, Row, Col, Button,Tabs,Tab} from 'react-bootstrap'
 
-import foto from '../../fotos/ideia.jpg'
 import Detalhes from './Detalhes'
 import InfosEvento from './InfosEvento'
 import Descricao from './Descricao'
@@ -14,15 +13,8 @@ export default class EventoEspecifico extends React.Component{
     this.state = {
       db: []
     };
-    //this.InfosEvento = this.InfosEvento.bind(this);
   }
 
-  // InfosEvento(){
-  //   fetch("http://52.67.245.155/php/infoevento.php")
-  //   .then( response => response.json())
-  //   .then(responseJson => this.setState({db: responseJson}));
-  //       console.log(this.state.db); 
-  // }
 
   componentDidMount(){
     fetch(`http://52.67.245.155/php/select.php?id=${this.props.match.params.id}`)
@@ -32,9 +24,7 @@ export default class EventoEspecifico extends React.Component{
 
 
   render(){
-
-    console.log(this.state.db)
-
+    
   if(this.state.db){
 
     return(

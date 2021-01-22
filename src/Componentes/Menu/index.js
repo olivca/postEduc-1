@@ -42,6 +42,7 @@ class Menu extends React.Component{
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                             <Nav.Item>
+                            {/* <Nav.Link as={Link} to="/TodosEventos">Todos os Eventos</Nav.Link>  */}
 
                                 <Nav.Link><ErroEfetuarLogin as={Link} to="/CadastroEvento"/></Nav.Link> 
                             </Nav.Item>
@@ -78,6 +79,9 @@ class Menu extends React.Component{
                                 <Nav.Link as={Link} to="/CadastroEvento">+ Criar Evento</Nav.Link> 
                             </Nav.Item>
                             <Nav.Item>
+                                <Nav.Link as={Link} to="/TodosEventos">Todos os Eventos</Nav.Link> 
+                            </Nav.Item>
+                            <Nav.Item>
                                 <Nav.Link > Bem vindo { novoNome }</Nav.Link>
                             </Nav.Item>
                             
@@ -111,6 +115,9 @@ class Menu extends React.Component{
                             <Nav.Item>
                                 {/*as={Link} href="" to=""*/}
                                 <Nav.Link as={Link} to="/CadastroEvento">+ Criar Evento</Nav.Link> 
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link as={Link} to="/TodosEventos">Todos os Eventos</Nav.Link> 
                             </Nav.Item>
                             
                             <Nav.Item>

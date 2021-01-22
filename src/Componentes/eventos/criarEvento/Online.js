@@ -11,9 +11,18 @@ class Online extends React.Component{
 
     this.state={
       redirect: false,
+      valor:'imagem'
     }
 
     this.enviarEvento = this.enviarEvento.bind(this)
+    this.mudaimagem = this.mudaimagem.bind(this)
+  }
+
+  mudaimagem(event){
+    event.preventDefault()
+    this.setState({
+      'valor': event.target.value
+    })
   }
 
   async enviarEvento(event){
@@ -24,7 +33,6 @@ class Online extends React.Component{
       method:"POST",
       body:dados,
     }
-    console.log(cabecalho)
     const resposta = await fetch(url,cabecalho)
     await resposta
 
@@ -84,9 +92,11 @@ class Online extends React.Component{
                 <Form.Group>
                   <Form.Label>Coloque uma imagem para o curso:</Form.Label>
                     <Form.File 
+                      onChange={this.mudaimagem}
                       name="imagem"
                       id="custom-file-tranlate-html"
-                      label="imagem"
+                      label={this.state.valor}
+                      accept=".jpg,.png,.jpeg"
                       custom
                     />
                 </Form.Group>
