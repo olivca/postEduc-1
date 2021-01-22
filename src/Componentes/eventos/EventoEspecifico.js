@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Container, Row, Col, Button,Tabs,Tab} from 'react-bootstrap'
+import {Container, Row, Col, Button} from 'react-bootstrap'
 
 import Detalhes from './Detalhes'
 import InfosEvento from './InfosEvento'
@@ -37,7 +37,9 @@ export default class EventoEspecifico extends React.Component{
               <InfosEvento 
                 key={infosEvento.id_evento}
                 verificado={infosEvento.verificado}
-                imagem={infosEvento.imagem}            
+                imagem={infosEvento.imagem}  
+                data = {infosEvento.data_postagem}
+                hora = {infosEvento.hora_postagem}          
               />
                   )
               )}
@@ -73,21 +75,18 @@ export default class EventoEspecifico extends React.Component{
         </Container>
 
         <Container >
-            <Tabs defaultActiveKey="home" >
-              <Tab eventKey="home" title="Descrição">    
-                {this.state.db && this.state.db.map( 
-                  descricao => (
-                    <Descricao
-                      key={descricao.id_evento}
-                      descricao={descricao.descricao}
-                      organizadores={descricao.organizadores}
-                      telefone={descricao.telefone}
-                    />
-                  )
-                )}
-              </Tab>
-            </Tabs>
-          </Container>
+               
+          {this.state.db && this.state.db.map( 
+            descricao => (
+              <Descricao
+                key={descricao.id_evento}
+                descricao={descricao.descricao}
+                organizadores={descricao.organizadores}
+                telefone={descricao.telefone}
+              />
+            ))}
+              
+        </Container>
       </Container>
     )
   }

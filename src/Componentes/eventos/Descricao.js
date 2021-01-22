@@ -1,14 +1,20 @@
 import React from 'react';
+import {Tabs, Tab} from 'react-bootstrap'
 
 export default class Descricao extends React.Component{
 
-render(){
+    render(){
         return(
-            <div>
-                <p>{this.props.descricao}</p>
-                <h5>Organizadores:</h5>
-                <p>{this.props.organizadores} - {this.props.telefone}</p>
-            </div>
+            <Tabs defaultActiveKey="home" >
+                <Tab eventKey="home" title="Descrição" style={{color:'black'}}>    
+                    <p>{this.props.descricao}</p>
+                </Tab>
+                <Tab eventKey="Organizadores" title="Organizadores" style={{color:'black'}}>
+                    <p>{this.props.organizadores} - {this.props.telefone}</p>
+                </Tab>
+            </Tabs>
+
+           
         );
     }
 }

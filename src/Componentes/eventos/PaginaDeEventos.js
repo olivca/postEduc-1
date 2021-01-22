@@ -4,7 +4,7 @@ import '../../css/index.css'
 
 import Minievento from './Minievento'
 import Minicategoria from './Minicategoria'
-import Caroussel from './Carousel'
+import Caroussel from '../carrossel/Carousel'
 import Sugestoes from '../Modal/Sugestoes'
 
 export default class PaginaDeEvento extends React.Component{
@@ -25,8 +25,8 @@ componentDidMount(){
   render(){
     return(
       <div>
-
-        <Caroussel/>
+        
+          <Caroussel/>
 
         <div className="flex bet altura">
           <p>Populares</p>
