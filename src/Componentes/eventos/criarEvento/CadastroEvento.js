@@ -44,7 +44,7 @@ import { connect } from 'react-redux'
 
     if(!novoNome){
 
-      return <h1>Você precisa estar Logado para Criar um evento</h1>
+      return
     }else{
 
       return(
