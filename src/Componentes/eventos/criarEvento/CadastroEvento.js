@@ -8,6 +8,7 @@ import {Container} from 'react-bootstrap'
 
 import { connect } from 'react-redux'
 
+import ErroEfetuarLogin from '../../Modal/ErroEfetuarLogin'
 
 
  class CadastroEvento extends React.Component{
@@ -44,7 +45,8 @@ import { connect } from 'react-redux'
 
     if(!novoNome){
 
-      return
+      return <ErroEfetuarLogin />
+
     }else{
 
       return(

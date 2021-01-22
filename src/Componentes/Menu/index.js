@@ -3,8 +3,6 @@ import {Link} from 'react-router-dom'
 
 import {Navbar, Nav} from 'react-bootstrap';
 
-import ErroEfetuarLogin from '../Modal/ErroEfetuarLogin'
-
 import Logo from '../../Img/logo.png';
 
 import { connect } from 'react-redux'
@@ -26,6 +24,8 @@ class Menu extends React.Component{
         const { IdLogin } = this.props
         NomeLogin('')
         IdLogin('')
+
+        
     }
 
      render(){
@@ -42,9 +42,7 @@ class Menu extends React.Component{
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                             <Nav.Item>
-                            {/* <Nav.Link as={Link} to="/TodosEventos">Todos os Eventos</Nav.Link>  */}
-
-                                <Nav.Link><ErroEfetuarLogin as={Link} to="/CadastroEvento"/></Nav.Link> 
+                                <Nav.Link as={Link} to="/TodosEventos">Todos os Eventos</Nav.Link> 
                             </Nav.Item>
                         </Nav>
                         <Nav className="ml-auto">
@@ -82,13 +80,16 @@ class Menu extends React.Component{
                                 <Nav.Link as={Link} to="/TodosEventos">Todos os Eventos</Nav.Link> 
                             </Nav.Item>
                             <Nav.Item>
+                                <Nav.Link as={Link} to="/EventosUser">Seus Eventos</Nav.Link> 
+                            </Nav.Item>
+                            <Nav.Item>
                                 <Nav.Link > Bem vindo { novoNome }</Nav.Link>
                             </Nav.Item>
                             
                         </Nav>
                         <Nav className="ml-auto">
                         <Nav.Item>
-                            <Nav.Link onClick={this.sair}>Sair</Nav.Link>
+                            <Nav.Link onClick={this.sair} as={Link} to="/">Sair</Nav.Link>
                         </Nav.Item>
                             
                             <Nav.Item>
@@ -126,16 +127,15 @@ class Menu extends React.Component{
                             <Nav.Item>
                                 <Nav.Link as={Link} to="/VerificaEvento">Autorizar eventos</Nav.Link> 
                             </Nav.Item>
-                        </Nav>
-                        <Nav className="mr-auto">
                             <Nav.Item>
-                                    <Nav.Link > Bem vindo { novoNome } </Nav.Link>
+                                <Nav.Link as={Link} to="/EventosUser">Seus Eventos</Nav.Link> 
                             </Nav.Item>
                         </Nav>
+                        
                         <Nav className="ml-auto">
                         
                         <Nav.Item>
-                            <Nav.Link onClick={this.sair}>Sair</Nav.Link>
+                            <Nav.Link onClick={this.sair} as={Link} to="/">Sair</Nav.Link>
                         </Nav.Item>
                             
                             <Nav.Item>
