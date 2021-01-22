@@ -15,7 +15,7 @@ export default class Caroussel extends React.Component{
 
   componentDidMount(){
     
-    fetch('http://localhost/postEduc/php/carrousel.php')
+    fetch('http://52.67.245.155/php/carrousel.php')
     .then(res => res.json())
     .then(resJson => this.setState({'events':resJson}))
    
