@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom'
 
 import {Navbar, Nav} from 'react-bootstrap';
 
+import ErroEfetuarLogin from '../Modal/ErroEfetuarLogin'
+
 import Logo from '../../Img/logo.png';
 
 import { connect } from 'react-redux'
@@ -40,7 +42,9 @@ class Menu extends React.Component{
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                             <Nav.Item>
-                                <Nav.Link as={Link} to="/TodosEventos">Todos os Eventos</Nav.Link> 
+                            {/* <Nav.Link as={Link} to="/TodosEventos">Todos os Eventos</Nav.Link>  */}
+
+                                <Nav.Link><ErroEfetuarLogin as={Link} to="/CadastroEvento"/></Nav.Link> 
                             </Nav.Item>
                         </Nav>
                         <Nav className="ml-auto">
@@ -117,7 +121,7 @@ class Menu extends React.Component{
                             </Nav.Item>
                             
                             <Nav.Item>
-                                <Nav.Link as={Link} to="/Denuncias">Verificar denucias</Nav.Link> 
+                                <Nav.Link as={Link} to="/Denuncias">Verificar denuncias</Nav.Link> 
                             </Nav.Item>
                             <Nav.Item>
                                 <Nav.Link as={Link} to="/VerificaEvento">Autorizar eventos</Nav.Link> 

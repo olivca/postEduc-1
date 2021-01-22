@@ -7,7 +7,6 @@ import CadastroEvento from './Componentes/eventos/criarEvento/CadastroEvento'
 import CadastroUsuario from './Componentes/CadastroUsuario/CadastroUsuario'
 import Login from './Componentes/Login/Login'
 import Sobre from './Paginas/Sobre'
-import PoliticaPrivacidade from './Paginas/PoliticaPrivacidade'
 import VerificaEvento from './Componentes/admin/VerificaEvento'
 import Denuncias from './Componentes/admin/Denuncias'
 import TodosEventos from './Componentes/eventos/Todos'
@@ -24,7 +23,6 @@ export class Rotas extends React.Component{
                 <Route exact path="/CadastroUsuario" component={CadastroUsuario}/>
                 <Route exact path="/Login" component={Login}/>
                 <Route exact path="/Sobre" component={Sobre}/>
-                <Route exact path="/PoliticaPrivacidade" component={PoliticaPrivacidade}/>
                 <Route exact path="/Denuncias" component={Denuncias}/>
                 <Route exact path="/VerificaEvento" component={VerificaEvento}/>
                 <Route exact path="/TodosEventos" component={TodosEventos}/>

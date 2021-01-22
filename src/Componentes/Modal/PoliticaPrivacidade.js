@@ -1,21 +1,34 @@
-import React from 'react'
-import '../css/index.css'
-import {Col} from "react-bootstrap"
+import React, {useState} from 'react'
+import { Modal, Button } from 'react-bootstrap'
+
+import {Link} from 'react-router-dom'
 
 
+function PoliticaPrivacidade() {
+    const [show, setShow] = useState(false);
 
-
-
-class PoliticaPrivacidade extends React.Component {   
-
-    render(){
-        return(
-            
-            <div className="container-fluid">
-                
-                <br />
-                <h1>Política de Privacidade</h1>
-
+    const handleClose = () => setShow(false);
+  
+    return (
+      <>
+        <Link onClick={() => setShow(true)}>
+            Politica de Privacidade
+        </Link>
+  
+        <Modal
+        show={show}
+        onHide={() => setShow(false)}
+        size='lg'
+        scrollable={true}
+        dialogClassName="modal-90w"
+        aria-labelledby="example-custom-modal-styling-title"
+        >
+            <Modal.Header closeButton>
+                <Modal.Title id="example-custom-modal-styling-title">
+                    Politica de Privacidade
+                </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
                 <p>No <i>Squad8</i>, privacidade e segurança são prioridades e nos comprometemos com a transparência do tratamento de dados pessoais dos nossos usuários/clientes. Por isso, esta presente Política de Privacidade estabelece como é feita a coleta, uso e transferência de informações de clientes ou outras pessoas que acessam ou usam nosso site.<br />
                 Ao utilizar nossos serviços, você entende que coletaremos e usaremos suas informações pessoais nas formas descritas nesta Política, sob as normas de Proteção de Dados (LGPD, Lei Federal 13.709/2018), das disposições consumeristas da Lei Federal 8078/1990 e as demais normas do ordenamento jurídico brasileiro aplicáveis.<br />
                 Dessa forma, o <i>Squad8</i>, doravante denominada simplesmente como <i>Squad8</i>, obriga-se ao disposto na presente Política de Privacidade.</p><br />
@@ -193,12 +206,15 @@ class PoliticaPrivacidade extends React.Component {
                 Caso tenha dúvidas sobre esta Política de Privacidade ou sobre os dados pessoais que tratamos, você pode entrar em contato com o nosso Encarregado de Proteção de Dados Pessoais, através dos seguintes canais:</p>
                 <i>Squad8<br />
                 squad8recode@gmail.com</i><br /><br />
-                
-            </ div>
-
-            
-        )
-    }
+            </Modal.Body>
+            <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                    Close
+                </Button>
+            </Modal.Footer>
+        </Modal>
+      </>
+    ) 
 }
 
-export default PoliticaPrivacidade;
+export default PoliticaPrivacidade
