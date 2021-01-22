@@ -11,7 +11,7 @@ function PoliticaPrivacidade() {
   
     return (
       <>
-        <Link onClick={() => setShow(true)}>
+        <Link to="#" onClick={() => setShow(true)}>
             Politica de Privacidade
         </Link>
   

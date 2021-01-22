@@ -3,7 +3,7 @@ import { Modal, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 
-export default function ErroEfetuarLogin() {
+export default function NaoPossuiEvento() {
     const [show, setShow] = useState(true);
   
     const handleClose = () => setShow(false);
@@ -13,13 +13,17 @@ export default function ErroEfetuarLogin() {
       <>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Efetuar o login</Modal.Title>
+            <Modal.Title>Voce ainda não possui eventos cadastrados</Modal.Title>
           </Modal.Header>
-          <Modal.Body>É necessário efetuar o Login para Cadastrar Eventos</Modal.Body>
+          <Modal.Body>Quer cadastrar um?</Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" as={Link} to="/Login">
-              Login
+            <Button variant="secondary" as={Link} to="/CadastroEvento">
+              Cadastre um evento
             </Button>
+            <Button variant="secondary" as={Link} to="/">
+              Home
+            </Button>
+
           </Modal.Footer>
         </Modal>
       </>

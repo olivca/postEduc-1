@@ -9,7 +9,7 @@ import '../../css/index.css'
 export default class Minicategoria extends React.Component{
   render(){
     return(
-      <Card className="card h ">
+      <Card className="card h my-2">
         <Card.Img variant="top" src={foto} width="250" height="160" />
         <Card.Body className="flex bet ">
           <Card.Title>Categoria</Card.Title>
