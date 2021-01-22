@@ -26,11 +26,20 @@ export default class EditaSemi extends React.Component{
       descricao: this.props.descricao,
       carga_horaria: this.props.carga_horaria,
       telefone: this.props.telefone,
+      valor:'imagem'
     }
 
     this.buscaCep = this.buscaCep.bind(this)
     this.editarEvento = this.editarEvento.bind(this)
     this.alterapadrao = this.alterapadrao.bind(this)
+    this.mudaimagem = this.mudaimagem.bind(this)
+  }
+
+  mudaimagem(event){
+    event.preventDefault()
+    this.setState({
+      'valor': event.target.value
+    })
   }
 
   alterapadrao(event){
@@ -170,9 +179,11 @@ export default class EditaSemi extends React.Component{
               <Form.Group>
                 <Form.Label>Coloque uma imagem para o curso:</Form.Label>
                   <Form.File 
+                    onChange={this.mudaimagem}
                     name="imagem"
                     id="custom-file-tranlate-html"
-                    label="imagem"
+                    label={this.state.valor}
+                    accept=".jpg,.png,.jpeg"
                     custom
                   />
               </Form.Group>

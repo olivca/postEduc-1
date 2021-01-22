@@ -12,11 +12,22 @@ class SemiPresencial extends React.Component{
     this.state = {
       cep:'',
       redirect: false,
+      valor:'imagem'
     }
 
     this.enviarEvento = this.enviarEvento.bind(this)
     this.buscaCep = this.buscaCep.bind(this)
+    this.mudaimagem = this.mudaimagem.bind(this)
   }
+
+
+  mudaimagem(event){
+    event.preventDefault()
+    this.setState({
+      'valor': event.target.value
+    })
+  }
+
 
   async enviarEvento(event){
     event.preventDefault()
@@ -61,7 +72,6 @@ class SemiPresencial extends React.Component{
       let minuto  = now.getMinutes()
       let segundo = now.getSeconds()
       
-      console.log(this.state.cep.cep)
 
       return(
         <Container >
@@ -100,9 +110,11 @@ class SemiPresencial extends React.Component{
                 <Form.Group>
                   <Form.Label>Coloque uma imagem para o curso:</Form.Label>
                     <Form.File 
+                      onChange={this.mudaimagem}
                       name="imagem"
                       id="custom-file-tranlate-html"
-                      label="imagem"
+                      label={this.state.valor}
+                      accept=".jpg,.png,.jpeg"
                       custom
                     />
                 </Form.Group>

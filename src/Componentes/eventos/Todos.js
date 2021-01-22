@@ -19,14 +19,16 @@ export default class TodosEventos extends React.Component{
   }
 
   render(){
-    console.log(this.state.eventos)
     return(
       <Container fluid>
         <Row>
           {this.state.eventos && this.state.eventos.map(even => (
-            <Col className="mb-5 mt-5">
-              <Minievento
-              />
+            <Col className="mb-5 mt-5"  md={3}>
+              <Minievento key={even.id_evento}
+                            id={even.id_evento}  
+                            imagem={even.imagem} 
+                            nome={even.nome_evento}
+                />
             </Col>
             
             

@@ -6,9 +6,21 @@ import Minievento from './Minievento'
 import Minicategoria from './Minicategoria'
 import Caroussel from './Carousel'
 
-
-
 export default class PaginaDeEvento extends React.Component{
+
+constructor(props){
+  super(props);
+  this.state = {
+    db: []
+  };
+}
+
+componentDidMount(){
+  fetch("http://52.67.245.155/php/infoevento.php")
+  .then( response => response.json())
+  .then(responseJson => this.setState({'db': responseJson}));
+}
+
   render(){
     return(
       <div>
@@ -21,13 +33,15 @@ export default class PaginaDeEvento extends React.Component{
         </div>
 
         <div className="flex bet margin fwrap">
-
-          <Minievento/>
-          <Minievento/>
-          <Minievento/>
-          <Minievento/>
-          <Minievento/>
-        
+            
+            {this.state.db && this.state.db.map(arrayevento => (
+                <Minievento key={arrayevento.id_evento}
+                            id={arrayevento.id_evento}  
+                            imagem={arrayevento.imagem} 
+                            nome={arrayevento.nome_evento}
+                />
+            ))}
+         
         </div>
 
         <div className="borda margin center informacoes">
