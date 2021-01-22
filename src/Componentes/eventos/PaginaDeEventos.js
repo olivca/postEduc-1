@@ -28,7 +28,7 @@ componentDidMount(){
         
           <Caroussel/>
 
-        <div className="flex bet altura">
+        <div className="flex altura">
           <p>Populares</p>
           <a href="http://localhost:3000/">+ Ver Todos</a>
         </div>
@@ -52,7 +52,7 @@ componentDidMount(){
 
         </div>
 
-        <div className="flex bet altura">
+        <div className="flex altura">
           <p>Categorias</p>
           <a href="http://localhost:3000/">+ Ver Mais</a>
         </div>
