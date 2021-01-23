@@ -31,9 +31,9 @@ import NaoTemPermissao from '../Modal/naoTemPermissao'
         <Row>
           
             {this.state.eventos && this.state.eventos.map(item => (
-              <Col>
+              <Col key={item.id_evento}>
                 <Averificar
-                  key={item.id_evento}
+                  
                   id={item.id_evento}
                   nome_evento = {item.nome_evento}
                   data_postagem = {item.data_postagem}
