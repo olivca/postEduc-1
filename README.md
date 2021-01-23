@@ -6,7 +6,7 @@
 
 ## Introdução
 
-O PostEduc é uma plataforma para "posta educação", ferramenta de acesso a atividades extraclasse e extracurriculares gratuitos visando:
+O PostEduc é uma plataforma para postar eventos educacionais, ferramenta de acesso a atividades extraclasse e extracurriculares gratuitos visando:
 - Desenvolvimento pessoal
 - Educacional e Profissional
 - Cidadão
@@ -61,7 +61,7 @@ ____
 
 ## Desenvolvido por Squad8 - RecodePRO
 ##### Membros:
-- Carol Oliveira
+- Caroline Oliveira
 - Gabriela Menacho
 - Jefferson Wiltenburg
 - Lucas Damasceno
