@@ -10,6 +10,7 @@ import Sobre from './Paginas/Sobre'
 import VerificaEvento from './Componentes/admin/VerificaEvento'
 import Denuncias from './Componentes/admin/Denuncias'
 import TodosEventos from './Componentes/eventos/Todos'
+import Categorias from './Componentes/eventos/categorias'
 
 export class Rotas extends React.Component{
     render(){
@@ -26,6 +27,7 @@ export class Rotas extends React.Component{
                 <Route exact path="/Denuncias" component={Denuncias}/>
                 <Route exact path="/VerificaEvento" component={VerificaEvento}/>
                 <Route exact path="/TodosEventos" component={TodosEventos}/>
+                <Route exact path="/Categorias" component={Categorias}/>
             
             </Switch>
         )    
