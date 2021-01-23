@@ -3,7 +3,7 @@ import { Modal, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 
-export default function ErroEfetuarLogin() {
+export default function NaoTemPermissao() {
     const [show, setShow] = useState(true);
   
     const handleClose = () => setShow(false);
@@ -13,12 +13,12 @@ export default function ErroEfetuarLogin() {
       <>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Efetuar o login</Modal.Title>
+            <Modal.Title>Você não Possui acesso a essa área!</Modal.Title>
           </Modal.Header>
-          <Modal.Body>É necessário efetuar o Login para Cadastrar Eventos</Modal.Body>
+          <Modal.Body>Volte a home</Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" as={Link} to="/Login">
-              Login
+            <Button variant="secondary" as={Link} to="/">
+              Home
             </Button>
           </Modal.Footer>
         </Modal>

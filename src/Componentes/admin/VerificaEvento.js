@@ -2,7 +2,7 @@ import React from 'react'
 import Averificar from './Averificar'
 import {Row, Col} from 'react-bootstrap'
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom'
+import NaoTemPermissao from '../Modal/naoTemPermissao'
 
  class VerificaEvento extends React.Component{
   constructor(props){
@@ -25,12 +25,7 @@ import { Link } from 'react-router-dom'
   render(){
     const { novoNome } = this.props
     if( novoNome !== 'admin'){
-      return(
-        <>
-          <h1>Você não tem acesso a isso!</h1>
-          <Link to="/">Inicio</Link>
-        </>
-      )
+      return <NaoTemPermissao/>
     }else{
       return(
         <Row>

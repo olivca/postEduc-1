@@ -21,7 +21,7 @@ class Online extends React.Component{
   mudaimagem(event){
     event.preventDefault()
     this.setState({
-      'valor': event.target.value
+      'valor': 'Imagem carregada'
     })
   }
 

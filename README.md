@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+<div style="text-align:center">
+<h1>PostEduc</h1>
+<img src="https://user-images.githubusercontent.com/77171167/105565542-0f21ea80-5d06-11eb-9912-41ba913e43fe.png" width="300" height="200" text-align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+</div>
 
-## Available Scripts
+## Introdução
 
-In the project directory, you can run:
+O PostEduc é uma plataforma para postar eventos educacionais, ferramenta de acesso a atividades extraclasse e extracurriculares gratuitos visando:
+- Desenvolvimento pessoal
+- Educacional e Profissional
+- Cidadão
+___
 
-### `npm start`
+## Tecnologias utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- ReactJS
+- React-Bootstrap
+- Bootstrap
+- CSS3
+- HTML5
+- Redux
+- Php
+- JavaScript
+- MySql
+- AWS
+___
 
-### `npm test`
+## Como baixar o projeto e instalar as dependências.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+######Clonar o repositório
+`$ git clone https://github.com/squad8recode/postEduc.git`
+######Entrar no diretório
+`$ cd postEduc`
+######Instalar dependencias
+`$ npm install`
+######Iniciar projeto
+`$ npm start`
+___
+## Novidades desta versão:
+- Remodelação do site: estrutura, design, formulários mais automatizados;
 
-### `npm run build`
+- Refatoração de HTML para React JS;
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Refatoração de bootstrap para react-bootstrap;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Revisão do banco de dados e normalização;
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Implementação de servidor mysql e apache na nuvem (AWS);
 
-### `npm run eject`
+- Implementação de administração (CRUD);
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Ajustes para melhoria da experiência do usuário;
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Elaboração de uma Política de Privacidade;
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Novas funcionalidades: formulário de interesses/sugestões para o projeto, denúncia de eventos.
+____
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Desenvolvido por Squad8 - RecodePRO
+##### Membros:
+- Caroline Oliveira
+- Gabriela Menacho
+- Jefferson Wiltenburg
+- Lucas Damasceno
+- Marcelo Daniliauskas

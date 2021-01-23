@@ -73,26 +73,4 @@
 
   mysqli_close($conexao);
 
-  
-  // $update = "update evento set modalidade = 'online',
-  //  nome_evento = 'teste', categoria = 'reggae', 
-  //  data_postagem = '2020-05-25', 
-  //  hora_postagem = '22:22', 
-  //  data_evento = '2021-05-08', 
-  //  hora_evento = '15:15', 
-  //  criador_evento = '2',
-  //  organizadores = 'lembranças', 
-  //  descricao = 'agora vai mane rs', 
-  //  link = 'link bom', 
-  //  estado = 'mt', 
-  //  cidade = 'mt', 
-  //  bairro = 'mt', 
-  //  logradouro = 'mt',
-  //  numero = 15, 
-  //  complemento = 'mt', 
-  //  cep = 125, 
-  //  carga_horaria = 15, 
-  //  imagem = '', 
-  //  verificado = 0,
-  //  telefone = 8888 where id_evento = 5;";
 ?>

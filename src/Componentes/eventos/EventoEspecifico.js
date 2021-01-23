@@ -11,7 +11,7 @@ export default class EventoEspecifico extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      db: []
+      db: [],
     };
   }
 
@@ -20,13 +20,12 @@ export default class EventoEspecifico extends React.Component{
     fetch(`http://52.67.245.155/php/select.php?id=${this.props.match.params.id}`)
     .then( response => response.json())
     .then(responseJson => this.setState({'db': responseJson}));
+
+    
   }
 
-
-  render(){
-    
+  render(){ 
   if(this.state.db){
-
     return(
       <Container fluid>
         <Container fluid>
@@ -64,12 +63,16 @@ export default class EventoEspecifico extends React.Component{
                       data={detalhes.data_evento}
                       hora={detalhes.hora_evento}
                       carga={detalhes.carga_horaria}
+                      criador = {detalhes.criador_evento}
+                      id = {detalhes.id_evento}
                     />
                   )
             )} 
 
 
               <Button> Participar </Button>
+              
+              
             </Col>
           </Row>
         </Container>

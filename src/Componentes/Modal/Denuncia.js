@@ -2,7 +2,7 @@ import React from 'react';
 import {Button, Modal, Form} from 'react-bootstrap';
 
 import Checkbox from '../../Componentes/Checkbox/Checkbox';
-
+import { connect } from 'react-redux';
 
 const itens = [
 	' conteúdo sexual / impróprio',
@@ -22,6 +22,8 @@ class Denuncia extends React.Component {
 		this.state = {
 			show: false,
 		};
+
+		this.enviarDenuncia = this.enviarDenuncia.bind(this)
 	}
 
 	handleClose() {
@@ -34,7 +36,7 @@ class Denuncia extends React.Component {
 
 	//Componente Checkbox
 
-	componentWillMount = () => {
+	componentDidMount = () => {
 		this.selecionadoCheckbox = new Set();
 	}
 
@@ -46,19 +48,20 @@ class Denuncia extends React.Component {
 		}
 	}
 
-	handleFormSubmit = formSubmitEvent => {
-		formSubmitEvent.preventDefault();
+	// handleFormSubmit = formSubmitEvent => {
+	// 	formSubmitEvent.preventDefault();
 
-		for(const checkbox of this.selecionadoCheckbox){
-			console.log(checkbox, 'selecionado');
-		}
-	}
+	// 	for(const checkbox of this.selecionadoCheckbox){
+	// 		console.log(checkbox, 'selecionado');
+	// 	}
+	// }
 
 	criarCheckbox = label => (
 		<Checkbox
 			label={label}
 			handleCheckboxChange={this.mudarCheckbox}
 			key={label}
+			name="tipo_denuncia"
 		/>
 	)
 
@@ -66,41 +69,67 @@ class Denuncia extends React.Component {
 		itens.map(this.criarCheckbox)
 	)
 
+	async enviarDenuncia(event){
+    event.preventDefault()
+    const url = "http://52.67.245.155/php/enviadenuncia.php"
+    const dados = new FormData(event.target)
+    const cabecalho = {
+      method:"POST",
+      body:dados,
+    }
+    
+    const resposta = await fetch(url,cabecalho)
+		await resposta
+		
+		alert('Sentimos muito que tenha ocorrido um problema, vamos avaliar a sua denuncia!')
+
+		this.handleClose()
+  }
 
 
 	render() {
+		let now = new Date()
+    let ano = now.getFullYear() 
+    let mes = now.getMonth()+1
+		let dia = now.getDate()
+		const { novoId } = this.props
+
 		return (
 			<>
 				<Button variant="danger" onClick={this.handleShow}>
 					Denunciar
-        		</Button>
+				</Button>
 
 				<Modal show={this.state.show} onHide={this.handleClose}>
 					<Modal.Header closeButton>
 						<Modal.Title>Denunciar Evento</Modal.Title>
 					</Modal.Header>
 					<Modal.Body>
-					<Form onSubmit={this.handleFormSubmit}>
-                        {this.criandoCheckboxes()}
-                        <br/>
-						<Form.Group controlId="exampleForm.ControlTextarea1">
-                            <Form.Label>Informações adicionais:</Form.Label>
-                            <Form.Control as="textarea" rows={3} placeholder="Relate aqui informações adicionais sobre a denuncia." />
-						</Form.Group>
-					</Form>
+						<Form onSubmit={this.enviarDenuncia}>
+							{this.criandoCheckboxes()}
+							<br/>
+							<Form.Group controlId="exampleForm.ControlTextarea1">
+								<Form.Label>Informações adicionais:</Form.Label>
+								<Form.Control as="textarea" name="denuncia" rows={3} placeholder="Relate aqui informações adicionais sobre a denuncia." />
+								<input type="hidden" name="id_usuario" defaultValue={novoId}/>
+								<input type="hidden" name="id_evento" defaultValue={this.props.id}/>
+          			<input type="hidden" name="data_denuncia" defaultValue={`${ano}-${mes}-${dia}`}/>
+							</Form.Group>
+								<Button variant="secondary" onClick={this.handleClose}>
+									Cancelar
+								</Button>
+								<Button variant="danger" type='submit' >
+									Denunciar
+								</Button>
+						</Form>
 					</Modal.Body>
-						<Modal.Footer>
-							<Button variant="secondary" onClick={this.handleClose}>
-								Cancelar
-							</Button>
-							<Button variant="danger" onClick={this.handleClose}>
-								Denunciar
-							</Button>
-						</Modal.Footer>
 				</Modal>
 			</>
 		);
 	}
 }
+const mapState = store =>({
+  novoId: store.IdLogin.novoId
+})
 
-export default Denuncia
+export default connect(mapState)(Denuncia)

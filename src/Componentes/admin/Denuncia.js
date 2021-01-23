@@ -49,7 +49,7 @@ export default class Denuncia extends React.Component{
 
           <Form>
             <Form.Control type="hidden" defaultValue={this.props.id_evento}/>
-            <Button variant="warning" type="submit" >Olhar evento</Button>
+            <Button variant="warning" as={Link} to={`/EventoEspecifico${this.props.id_evento}`} >Olhar evento</Button>
           </Form>
         </Row>
       </div>

@@ -26,7 +26,7 @@ export default class Edicao extends React.Component{
   }
 
   componentDidMount(){
-    fetch('http://localhost/testes/select.php')
+    fetch(`http://52.67.245.155/php/select.php?id=${this.props.match.params.id}`)
     .then(resposta => resposta.json())
     .then(resposta => this.setState({'dados':resposta}))
     
@@ -128,6 +128,7 @@ export default class Edicao extends React.Component{
   }
 
   render(){
+    
     
     return(
       <>

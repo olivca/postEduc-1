@@ -1,7 +1,7 @@
 import React from 'react'
-import {Link} from 'react-router-dom' 
 import Denuncia from './Denuncia'
 import { connect } from 'react-redux';
+import NaoTemPermissao from '../Modal/naoTemPermissao'
 
  class Denuncias extends React.Component{
   constructor(props){
@@ -21,12 +21,7 @@ import { connect } from 'react-redux';
   render(){
     const { novoNome } = this.props
     if( novoNome !== 'admin'){
-      return(
-        <>
-          <h1>Você não tem acesso a isso!</h1>
-          <Link to="/">Inicio</Link>
-        </>
-      )
+      return <NaoTemPermissao/>
     }else{
       return(
         <div>
