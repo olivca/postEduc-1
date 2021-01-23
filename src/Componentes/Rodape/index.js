@@ -26,8 +26,12 @@ export class Rodape extends React.Component{
                             <ul className="list-unstyled">
                                 <li><Link to="/CadastroEvento">Criar Evento</Link></li>
                                 {/* <li><a href="#!">Criar Grupo de Estudos</a></li> */}
+
+                                <li><a href="/Categorias">Categorias</a></li>
+                                <li><a href="#!">Eventos</a></li>
                                 <li><Link to="/categorias">Categorias</Link></li>
                                 <li><Link to="/TodosEventos">Eventos</Link></li>
+
                             </ul>
                         </div>
                         <div className="col-4">

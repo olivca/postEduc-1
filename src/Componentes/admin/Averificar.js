@@ -35,11 +35,15 @@ export default class Averificar extends React.Component{
             <Form onSubmit={this.darCertificacao} className="mr-3">
             
               <Form.Control type="hidden" name="id" defaultValue={this.props.id}/>
-              <Button variant="success" type="submit">Dar Certificação</Button>
+              <Button variant="success" type="submit">Aprovar</Button>
             </Form>
             <Form >
               <Form.Control type="hidden" name="id" defaultValue={this.props.id}/>
+
+              <Button variant="warning" type="submit">Ver detalhes</Button>
+
               <Button variant="warning" type="submit" as={Link} to={`EventoEspecifico${this.props.id}`}>Olhar evento</Button>
+
             </Form>
           </Row>
         </Col>
