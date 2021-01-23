@@ -26,24 +26,24 @@ class EventosUser extends React.Component{
   render(){
     const { novoId } = this.props
 
-    if(novoId && this.state.eventUser.length === 0){
-      return <NaoPossuiEvento/>
+    if(novoId && this.state.eventUser.length !== 0){
+      return(
+        <>
+        <div className="flex bet margin fwrap">
+          {this.state.eventUser && this.state.eventUser.map(event => (
+            <MiniEvento 
+              key={event.id_evento}
+              id={event.id_evento}  
+              imagem={event.imagem} 
+              nome={event.nome_evento}
+            />
+          ))}
+          </div>
+        </>
+      )
 
-    }else if(novoId && this.state.eventUser.length !== 0){
-        return(
-          <>
-          <div className="flex bet margin fwrap">
-            {this.state.eventUser && this.state.eventUser.map(event => (
-              <MiniEvento 
-                key={event.id_evento}
-                id={event.id_evento}  
-                imagem={event.imagem} 
-                nome={event.nome_evento}
-              />
-            ))}
-            </div>
-          </>
-        )
+    }else if(novoId && this.state.eventUser.length === 0){
+      return <NaoPossuiEvento/>
       
     }else{
       return <ErroEfetuarLoginEdit />

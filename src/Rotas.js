@@ -32,7 +32,7 @@ export class Rotas extends React.Component{
                 <Route exact path="/TodosEventos" component={TodosEventos}/>
                 <Route exact path="/categorias" component={Categorias}/>
                 <Route exact path="/EventosUser" component={EventosUser}/>
-                <Route exact path="/EditarEvento" component={EditarEvento}/>
+                <Route exact path="/EditarEvento:id" component={EditarEvento}/>
             
             </Switch>
         )    

@@ -25,7 +25,7 @@ class Detalhes extends React.Component{
 
                 <p>Quando: {this.props.data} - {this.props.hora_evento}</p>
                 <p>Duração: {this.props.carga_horaria}</p>
-                <Button as={Link} to="/EditarEvento" >Editar</Button>
+                <Button as={Link} to={`/EditarEvento${this.props.id}`} >Editar</Button>
                 </div>
                 )
         }

@@ -24,7 +24,7 @@ export default class EventoEspecifico extends React.Component{
     
   }
 
-  render(){
+  render(){ 
   if(this.state.db){
     return(
       <Container fluid>
@@ -64,6 +64,7 @@ export default class EventoEspecifico extends React.Component{
                       hora={detalhes.hora_evento}
                       carga={detalhes.carga_horaria}
                       criador = {detalhes.criador_evento}
+                      id = {detalhes.id_evento}
                     />
                   )
             )} 
