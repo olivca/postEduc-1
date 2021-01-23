@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import Denuncia from '../Modal/Denuncia';
 
 
 class Detalhes extends React.Component{
@@ -26,6 +27,7 @@ class Detalhes extends React.Component{
                 <p>Quando: {this.props.data} - {this.props.hora_evento}</p>
                 <p>Duração: {this.props.carga_horaria}</p>
                 <Button as={Link} to={`/EditarEvento${this.props.id}`} >Editar</Button>
+                <Denuncia id={this.props.id}/>
                 </div>
                 )
         }
@@ -37,6 +39,7 @@ class Detalhes extends React.Component{
 
             <p>Quando: {this.props.data} - {this.props.hora_evento}</p>
             <p>Duração: {this.props.carga_horaria}</p>
+            <Denuncia id={this.props.id}/>
             </div>
         )
     }

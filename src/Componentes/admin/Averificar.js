@@ -1,5 +1,6 @@
 import React from 'react'
 import {Col, Form, Button,Row} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 export default class Averificar extends React.Component{
   constructor(props){
@@ -38,7 +39,7 @@ export default class Averificar extends React.Component{
             </Form>
             <Form >
               <Form.Control type="hidden" name="id" defaultValue={this.props.id}/>
-              <Button variant="warning" type="submit">Olhar evento</Button>
+              <Button variant="warning" type="submit" as={Link} to={`EventoEspecifico${this.props.id}`}>Olhar evento</Button>
             </Form>
           </Row>
         </Col>
