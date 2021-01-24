@@ -1,5 +1,5 @@
 import React from 'react'
-import {Col, Form, Button,Row} from 'react-bootstrap'
+import { Form, Button,Row} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 export default class Averificar extends React.Component{
@@ -29,25 +29,25 @@ export default class Averificar extends React.Component{
 
   render(){
     return(
-        <Col>
+      <div >
+        <Row>
           <h3>Evento: {this.props.nome_evento} <br/>postado em: {this.props.data_postagem}</h3>
-          <Row>
+        </Row>
+        <Row>
+        
+          <Form onSubmit={this.darCertificacao} className="mr-3">
           
-            <Form onSubmit={this.darCertificacao} className="mr-3">
-            
-              <Form.Control type="hidden" name="id" defaultValue={this.props.id}/>
-              <Button variant="success" type="submit">Aprovar</Button>
-            </Form>
-            <Form >
-              <Form.Control type="hidden" name="id" defaultValue={this.props.id}/>
+            <Form.Control type="hidden" name="id" defaultValue={this.props.id}/>
+            <Button variant="success" type="submit">Aprovar</Button>
+          </Form>
+          <Form >
+            <Form.Control type="hidden" name="id" defaultValue={this.props.id}/>
 
-              <Button variant="warning" type="submit">Ver detalhes</Button>
+            <Button variant="warning" type="submit" as={Link} to={`EventoEspecifico${this.props.id}`}>Ver detalhes</Button>
 
-              <Button variant="warning" type="submit" as={Link} to={`EventoEspecifico${this.props.id}`}>Olhar evento</Button>
-
-            </Form>
-          </Row>
-        </Col>
+          </Form>
+        </Row>
+      </div>
     )
   } 
 }

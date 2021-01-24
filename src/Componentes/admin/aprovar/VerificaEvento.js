@@ -2,7 +2,7 @@ import React from 'react'
 import Averificar from './Averificar'
 import {Row, Col} from 'react-bootstrap'
 import { connect } from 'react-redux';
-import NaoTemPermissao from '../Modal/naoTemPermissao'
+import NaoTemPermissao from '../../Modal/naoTemPermissao'
 
  class VerificaEvento extends React.Component{
   constructor(props){
