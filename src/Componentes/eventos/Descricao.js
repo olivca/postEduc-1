@@ -1,5 +1,6 @@
 import React from 'react';
 import {Tabs, Tab} from 'react-bootstrap'
+import '../eventos/descricao.css'
 
 export default class Descricao extends React.Component{
 
