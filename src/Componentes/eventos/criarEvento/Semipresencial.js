@@ -218,7 +218,7 @@ class SemiPresencial extends React.Component{
 
               <Col>
                 <Form.Group>
-                  <Form.Label  >Comple: </Form.Label>
+                  <Form.Label  >Complemento: </Form.Label>
                     <Form.Control  type="text" name="comple" />
                 </Form.Group>
               </Col>
