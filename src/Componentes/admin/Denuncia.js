@@ -21,6 +21,7 @@ export default class Denuncia extends React.Component{
     }
 
     await fetch(url,cabecalho)
+    window.location.reload();
   }
   
   render(){

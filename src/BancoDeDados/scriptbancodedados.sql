@@ -79,12 +79,12 @@ create table if not exists comentarios(
   foreign key (id_evento_fk)  references evento (id_evento)
 );
 
-create table if not exists interesse (
-	id_interesse int not null auto_increment,
+create table if not exists sugestoes (
+	id_sugestao int not null auto_increment,
     nome varchar(100) not null,
     email varchar(50) not null,
-    interesse text not null,
-    primary key (id_interesse)
+    sugestao text not null,
+    primary key (id_sugestao)
 );
  
 create view organizador as
