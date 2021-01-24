@@ -24,6 +24,7 @@ export default class Averificar extends React.Component{
     }
     const resposta = await fetch(url,cabecalho)
     await resposta
+    window.location.reload();
   }
 
   render(){
