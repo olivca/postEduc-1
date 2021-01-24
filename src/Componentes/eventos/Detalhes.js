@@ -21,7 +21,7 @@ class Detalhes extends React.Component{
             return (
                 <div>                
                 <h2>{this.props.nome}</h2>
-                <p>{this.props.modalidade}</p>
+                <p>Modalidade: {this.props.modalidade}</p>
                 <p className="pt-5">Local: {this.props.logradouro},{this.props.numero},{this.props.bairro}</p>
                 <p className="pt-5">{this.props.complemento},{this.props.cidade},{this.props.estado}</p>
 
@@ -35,6 +35,7 @@ class Detalhes extends React.Component{
         return(
             <div>                
             <h2>{this.props.nome}</h2>
+            <p>Modalidade: {this.props.modalidade}</p>
             <p className="pt-5">Local: {this.props.logradouro},{this.props.numero},{this.props.bairro}</p>
             <p className="pt-5">{this.props.complemento},{this.props.cidade},{this.props.estado}</p>
 
